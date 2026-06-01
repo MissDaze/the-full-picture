@@ -12,8 +12,9 @@
     "subtext": "Original hyper-local art — staged on your walls, printed for your listing, gifted to your buyer.",
     "cta": "See The Work",
     "images": {
-      "card1": "/images/hero/before-after-1.jpg",
-      "card2": "/images/hero/before-after-2.jpg"
+      "card1": "/images/hero/01.png",
+      "card2": "/images/hero/02.png",
+      "card3": "/images/hero/03.png"
     }
   },
   "pricing": {

@@ -23,16 +23,20 @@ export default function Home() {
     transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
   })
 
-  const card1 = {
-    opacity: mounted ? 1 : 0,
-    transform: mounted ? 'rotate(-2deg) translateX(0)' : 'rotate(-2deg) translateX(-80px)',
-    transition: 'opacity 0.5s ease 200ms, transform 0.5s ease 200ms',
-  }
+  const heroCards = Object.values(hero.images || {}).filter(Boolean)
 
-  const card2 = {
-    opacity: mounted ? 1 : 0,
-    transform: mounted ? 'rotate(2deg) translateX(0)' : 'rotate(2deg) translateX(80px)',
-    transition: 'opacity 0.5s ease 400ms, transform 0.5s ease 400ms',
+  const cardStyle = (i) => {
+    const rotations = [-2, 0, 2]
+    const offsets = [-80, 0, 80]
+    const rot = rotations[i] ?? (i % 2 === 0 ? -2 : 2)
+    const offset = offsets[i] ?? (i % 2 === 0 ? -80 : 80)
+    return {
+      opacity: mounted ? 1 : 0,
+      transform: mounted
+        ? `rotate(${rot}deg) translateX(0)`
+        : `rotate(${rot}deg) translateX(${offset}px)`,
+      transition: `opacity 0.5s ease ${200 + i * 150}ms, transform 0.5s ease ${200 + i * 150}ms`,
+    }
   }
 
   const sorted = [...collections].sort((a, b) => a.sortOrder - b.sortOrder)
@@ -72,39 +76,27 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Before/After cards */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center justify-center w-full max-w-2xl">
-          <div style={card1} className="w-full md:w-[320px] lg:w-[360px] flex-shrink-0 shadow-2xl">
-            <div className="relative border-2 border-[#c9a84c] aspect-[4/3] bg-[#1a1a1a] overflow-hidden">
-              {hero.images?.card1 && (
+        {/* Before/After cards — renders however many images are in site-config hero.images */}
+        <div className="flex flex-col md:flex-row gap-8 md:gap-6 items-center justify-center w-full max-w-5xl">
+          {heroCards.map((src, i) => (
+            <div
+              key={i}
+              style={cardStyle(i)}
+              className="w-full md:w-[300px] lg:w-[340px] flex-shrink-0 shadow-2xl"
+            >
+              <div className="relative border-2 border-[#c9a84c] aspect-[4/3] bg-[#1a1a1a] overflow-hidden">
                 <img
-                  src={hero.images.card1}
+                  src={src}
                   alt="Before and after"
                   className="w-full h-full object-cover"
                   onError={(e) => { e.target.style.display = 'none' }}
                 />
-              )}
-              <div className="absolute inset-y-0 left-1/2 w-px bg-[#c9a84c]/40 -translate-x-px" />
-              <span className="absolute top-2.5 left-3 text-[9px] uppercase tracking-[0.2em] text-[#c9a84c] font-semibold">Before</span>
-              <span className="absolute top-2.5 right-3 text-[9px] uppercase tracking-[0.2em] text-[#c9a84c] font-semibold">After</span>
+                <div className="absolute inset-y-0 left-1/2 w-px bg-[#c9a84c]/40 -translate-x-px" />
+                <span className="absolute top-2.5 left-3 text-[9px] uppercase tracking-[0.2em] text-[#c9a84c] font-semibold">Before</span>
+                <span className="absolute top-2.5 right-3 text-[9px] uppercase tracking-[0.2em] text-[#c9a84c] font-semibold">After</span>
+              </div>
             </div>
-          </div>
-
-          <div style={card2} className="w-full md:w-[320px] lg:w-[360px] flex-shrink-0 shadow-2xl">
-            <div className="relative border-2 border-[#c9a84c] aspect-[4/3] bg-[#1a1a1a] overflow-hidden">
-              {hero.images?.card2 && (
-                <img
-                  src={hero.images.card2}
-                  alt="Before and after"
-                  className="w-full h-full object-cover"
-                  onError={(e) => { e.target.style.display = 'none' }}
-                />
-              )}
-              <div className="absolute inset-y-0 left-1/2 w-px bg-[#c9a84c]/40 -translate-x-px" />
-              <span className="absolute top-2.5 left-3 text-[9px] uppercase tracking-[0.2em] text-[#c9a84c] font-semibold">Before</span>
-              <span className="absolute top-2.5 right-3 text-[9px] uppercase tracking-[0.2em] text-[#c9a84c] font-semibold">After</span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
