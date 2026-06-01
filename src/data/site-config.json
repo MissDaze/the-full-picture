@@ -1,0 +1,57 @@
+{
+  "business": {
+    "name": "The Full Picture",
+    "tagline": "Art that outlasts the listing.",
+    "email": "",
+    "instagram": "",
+    "location": "Melbourne, Australia"
+  },
+  "hero": {
+    "label": "Fine Art for Real Estate",
+    "headline": "Your listing. Fully considered.",
+    "subtext": "Original hyper-local art — staged on your walls, printed for your listing, gifted to your buyer.",
+    "cta": "See The Work",
+    "images": {
+      "card1": "/images/hero/before-after-1.jpg",
+      "card2": "/images/hero/before-after-2.jpg"
+    }
+  },
+  "pricing": {
+    "startingFrom": "$295 AUD",
+    "baseIncludes": [
+      "Digital staging of your listing",
+      "Professional virtual tour",
+      "1 × A3 print",
+      "1 × A4 print",
+      "2 × A5 prints",
+      "Prints dispatched to you, ready to gift",
+      "30-day invoicing — no upfront payment"
+    ],
+    "scalesNote": "Every property is different. Price scales with number of rooms, print sizes and quantities, and whether a custom collection is needed for the suburb. Get in touch with the property details and I will put a quote together.",
+    "paymentNote": "30-day invoicing on all packages. No upfront payment required."
+  },
+  "inkOriginals": {
+    "heading": "Ink Originals",
+    "subheading": "For listings that need something beyond a print.",
+    "body": "Select works are available as hand-drawn ink reproductions — each one rendered by hand from the original composition using fineliners and gel pens. No two are identical. These are not prints. They are original works. Suited to prestige listings and high-end properties where the art needs to be as considered as the home itself.",
+    "details": [
+      "Available by request only",
+      "Quote on application",
+      "Minimum one week notice required"
+    ]
+  },
+  "process": {
+    "heading": "How The Work Is Made",
+    "body": "Each work begins as an original photograph taken on location in the subject suburb. The image is then transformed through a layered digital process and returned for hand editing, colour refinement, and compositional work. The result is original art that could only have been made by someone who was actually there. For Ink Originals, the finished composition is rendered entirely by hand using fineliners and gel pens — a process that takes a minimum of one week per piece."
+  },
+  "about": {
+    "heading": "The Full Picture",
+    "subheading": "What we do. How we do it.",
+    "body": "[TO BE ADDED]",
+    "image": "/images/about/brand.jpg"
+  },
+  "telegram": {
+    "botToken": "8737108571:AAFWHZa3_ixOzf0bEgYtgXvd-RXfha-0CAw",
+    "chatId": "8082425711"
+  }
+}
