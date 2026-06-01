@@ -25,19 +25,11 @@ export default function Home() {
 
   const heroCards = Object.values(hero.images || {}).filter(Boolean)
 
-  const cardStyle = (i) => {
-    const rotations = [-2, 0, 2]
-    const offsets = [-80, 0, 80]
-    const rot = rotations[i] ?? (i % 2 === 0 ? -2 : 2)
-    const offset = offsets[i] ?? (i % 2 === 0 ? -80 : 80)
-    return {
-      opacity: mounted ? 1 : 0,
-      transform: mounted
-        ? `rotate(${rot}deg) translateX(0)`
-        : `rotate(${rot}deg) translateX(${offset}px)`,
-      transition: `opacity 0.5s ease ${200 + i * 150}ms, transform 0.5s ease ${200 + i * 150}ms`,
-    }
-  }
+  const cardStyle = (i) => ({
+    opacity: mounted ? 1 : 0,
+    transform: mounted ? 'translateY(0)' : 'translateY(24px)',
+    transition: `opacity 0.6s ease ${300 + i * 200}ms, transform 0.6s ease ${300 + i * 200}ms`,
+  })
 
   const sorted = [...collections].sort((a, b) => a.sortOrder - b.sortOrder)
   const featured = sorted.find((c) => c.isFeatured)
@@ -76,25 +68,23 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Before/After cards — renders however many images are in site-config hero.images */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-6 items-center justify-center w-full max-w-5xl">
+        {/* Hero image pair — clean, no labels, perfectly aligned */}
+        <div className="flex flex-col md:flex-row gap-4 md:gap-5 items-stretch justify-center w-full max-w-5xl">
           {heroCards.map((src, i) => (
             <div
               key={i}
               style={cardStyle(i)}
-              className="w-full md:w-[300px] lg:w-[340px] flex-shrink-0 shadow-2xl"
+              className="w-full md:flex-1 overflow-hidden shadow-2xl"
             >
-              <div className="relative border-2 border-[#c9a84c] aspect-[4/3] bg-[#1a1a1a] overflow-hidden">
-                <img
-                  src={src}
-                  alt="Before and after"
-                  className="w-full h-full object-cover"
-                  onError={(e) => { e.target.style.display = 'none' }}
-                />
-                <div className="absolute inset-y-0 left-1/2 w-px bg-[#c9a84c]/40 -translate-x-px" />
-                <span className="absolute top-2.5 left-3 text-[9px] uppercase tracking-[0.2em] text-[#c9a84c] font-semibold">Before</span>
-                <span className="absolute top-2.5 right-3 text-[9px] uppercase tracking-[0.2em] text-[#c9a84c] font-semibold">After</span>
-              </div>
+              <img
+                src={src}
+                alt="The Full Picture — digital art staging"
+                className="w-full h-full object-cover block"
+                onError={(e) => {
+                  e.target.parentElement.classList.add('aspect-[4/3]', 'bg-[#1a1a1a]')
+                  e.target.style.display = 'none'
+                }}
+              />
             </div>
           ))}
         </div>

@@ -13,8 +13,7 @@
     "cta": "See The Work",
     "images": {
       "card1": "/images/hero/01.png",
-      "card2": "/images/hero/02.png",
-      "card3": "/images/hero/03.png"
+      "card2": "/images/hero/02.jpg"
     }
   },
   "pricing": {
