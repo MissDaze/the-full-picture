@@ -14,9 +14,9 @@ export default function Copyright() {
         Act 1968 (Cth).
       </p>
       <p>
-        Each work begins as an original photograph taken on location by The Full Picture. The image
-        is transformed through a layered digital process and returned for hand editing, colour
-        refinement, and compositional work. The resulting artwork is an original work in which
+        Each work begins as an original photograph taken on location by The Full Picture. Every stage
+        from there is handled personally — digital and physical work, colour, composition, and
+        editing — all made by the same hands. The resulting artwork is an original work in which
         copyright subsists from the moment of creation.
       </p>
       <p>Ink Originals are additionally protected as hand-drawn original artworks.</p>
