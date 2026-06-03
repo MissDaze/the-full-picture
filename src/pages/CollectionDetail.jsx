@@ -34,30 +34,35 @@ export default function CollectionDetail() {
     )
   }
 
-  const allImages = [...(collection.mockups || []), ...(collection.artwork || [])]
+  const mockups = collection.mockups || []
+  const artwork = collection.artwork || []
   const otherCollections = collections
     .filter((c) => c.slug !== slug)
     .sort((a, b) => a.sortOrder - b.sortOrder)
     .slice(0, 3)
-  const firstImage = collection.mockups?.[0]
+  const firstImage = collection.coverImage || collection.mockups?.[0] || collection.artwork?.[0]
 
   return (
     <>
       <SEOHead title={collection.name} description={collection.shortDescription} />
 
       {/* ── Section A: Header banner ─────────────────────── */}
-      <section className="relative min-h-[55vh] flex flex-col items-center justify-end text-center px-6 pb-14 pt-32 overflow-hidden">
+      <section className="relative flex min-h-[58vh] flex-col items-center justify-end overflow-hidden px-6 pb-16 pt-32 text-center">
         <div className="absolute inset-0 bg-[#0a0a0a]" />
         {firstImage && (
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: `url(${firstImage})`,
-              filter: 'brightness(0.2)',
+              filter: 'brightness(0.18)',
             }}
           />
         )}
-        <div className="relative z-10 max-w-2xl">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-[#0a0a0a]/20" />
+        <div className="relative z-10 max-w-3xl">
+          <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-[#cc0000]">
+            {collection.category}
+          </p>
           <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl text-[#f5f0e8] mb-4 leading-tight">
             {collection.name}
           </h1>
@@ -67,9 +72,9 @@ export default function CollectionDetail() {
 
       {/* ── Section B: About ─────────────────────────────── */}
       <ScrollFadeIn>
-        <section className="bg-[#0a0a0a] py-16 px-6">
-          <div className="max-w-[720px] mx-auto">
-            <p className="font-playfair italic text-[#888888] text-lg leading-relaxed">
+        <section className="bg-[#0a0a0a] px-6 py-18 md:py-20">
+          <div className="mx-auto max-w-[760px] border-l border-[#cc0000]/70 pl-7">
+            <p className="font-playfair text-xl italic leading-relaxed text-[#9a9a9a] md:text-2xl">
               {collection.fullDescription}
             </p>
           </div>
@@ -78,29 +83,77 @@ export default function CollectionDetail() {
 
       {/* ── Section C: The Work ──────────────────────────── */}
       <ScrollFadeIn>
-        <section className="bg-[#111111] py-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-playfair text-2xl md:text-3xl text-[#f5f0e8] mb-10">The Works</h2>
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-3">
-              {allImages.map((src, i) => (
-                <div
-                  key={i}
-                  className="break-inside-avoid mb-3 cursor-pointer overflow-hidden bg-[#1a1a1a]
-                    hover:brightness-110 transition-all duration-300"
-                  onClick={() => setLightboxSrc(src)}
-                >
-                  <img
-                    src={src}
-                    alt={`${collection.name} — work ${i + 1}`}
-                    className="w-full h-auto block"
-                    onError={(e) => {
-                      e.target.parentElement.classList.add('aspect-[4/3]')
-                      e.target.style.display = 'none'
-                    }}
-                  />
+        <section className="bg-[#111111] px-6 py-20">
+          <div className="mx-auto max-w-7xl">
+            {mockups.length > 0 && (
+              <div className="mb-16">
+                <div className="mb-8 flex flex-col gap-3 border-b border-[#2a2a2a] pb-6 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="mb-3 text-[10px] uppercase tracking-[0.28em] text-[#cc0000]">
+                      Campaign views
+                    </p>
+                    <h2 className="font-playfair text-2xl text-[#f5f0e8] md:text-3xl">
+                      Staged presentation
+                    </h2>
+                  </div>
+                  <p className="max-w-md text-sm leading-relaxed text-[#777]">
+                    Lead visuals are cropped consistently so the collection reads like a professional campaign set.
+                  </p>
                 </div>
-              ))}
-            </div>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  {mockups.map((src, i) => (
+                    <button
+                      key={src}
+                      type="button"
+                      className="group block overflow-hidden border border-[#2a2a2a] bg-[#050505] p-3 text-left transition-colors hover:border-[#cc0000]/70"
+                      onClick={() => setLightboxSrc(src)}
+                    >
+                      <span className="block aspect-[3/2] overflow-hidden bg-[#0a0a0a]">
+                        <img
+                          src={src}
+                          alt={`${collection.name} campaign view ${i + 1}`}
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.015] group-hover:brightness-110"
+                          onError={(e) => { e.target.style.display = 'none' }}
+                        />
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {artwork.length > 0 && (
+              <div>
+                <div className="mb-8 flex flex-col gap-3 border-b border-[#2a2a2a] pb-6 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="mb-3 text-[10px] uppercase tracking-[0.28em] text-[#cc0000]">
+                      Artwork set
+                    </p>
+                    <h2 className="font-playfair text-2xl text-[#f5f0e8] md:text-3xl">
+                      The works
+                    </h2>
+                  </div>
+                  <p className="text-sm text-[#777]">{artwork.length} works in this collection</p>
+                </div>
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 xl:grid-cols-4">
+                  {artwork.map((src, i) => (
+                    <button
+                      key={src}
+                      type="button"
+                      className="group flex aspect-[4/5] items-center justify-center overflow-hidden border border-[#242424] bg-[#080808] p-3 transition-colors hover:border-[#cc0000]/70 md:p-4"
+                      onClick={() => setLightboxSrc(src)}
+                    >
+                      <img
+                        src={src}
+                        alt={`${collection.name} artwork ${i + 1}`}
+                        className="max-h-full max-w-full object-contain transition duration-500 group-hover:scale-[1.02] group-hover:brightness-110"
+                        onError={(e) => { e.target.style.display = 'none' }}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </ScrollFadeIn>
@@ -150,7 +203,7 @@ export default function CollectionDetail() {
           <section className="bg-[#0a0a0a] py-16 px-6">
             <div className="max-w-6xl mx-auto">
               <h2 className="font-playfair text-2xl text-[#f5f0e8] mb-10">Other Collections</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid auto-rows-fr grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {otherCollections.map((c) => (
                   <CollectionCard key={c.slug} collection={c} />
                 ))}
