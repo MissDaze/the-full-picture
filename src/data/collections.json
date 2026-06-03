@@ -2,10 +2,11 @@
   {
     "name": "Melbourne After Dark",
     "slug": "melbourne-after-dark",
-    "shortDescription": "Five works. One city. A light that never quite arrives.",
-    "fullDescription": "Melbourne rendered in shadow and red — Luna Park's great mouth open onto something older than fun, Flinders Street Station flooded and watched over by a cloaked figure, a dragon coiling behind the CBD skyline under a blood moon. Each work begins as an original photograph taken on location. Every stage from there is handled personally — digital and physical work, colour, composition, editing — moving between techniques as each piece demands. The result is art that could only have been made by someone who was actually there. Linocut, woodcut and dark oil-painting styles — each piece lives in the tension between the city you recognise and the one that watches back. Red, black, and bone white. Familiar. Unsettling. Unmistakably Melbourne. Suits interiors that want presence — dark timbers, deep tones, spaces that don't apologise for themselves.",
+    "shortDescription": "Premium city mood for apartments, dusk campaigns and listings that need presence.",
+    "fullDescription": "A cinematic Melbourne collection built for properties that need atmosphere without feeling generic. Dark city landmarks, red-moon skies and sharp architectural contrast make this the strongest fit for premium apartments, evening campaigns and city-edge listings. Use it when the property needs to feel memorable, not just furnished.",
     "isFeatured": true,
     "sortOrder": 1,
+    "category": "Place-led / city premium",
     "mockups": [
       "/images/collections/melbourne-after-dark/mockups/01.jpg",
       "/images/collections/melbourne-after-dark/mockups/02.jpg"
@@ -15,37 +16,63 @@
       "/images/collections/melbourne-after-dark/artwork/02.jpg",
       "/images/collections/melbourne-after-dark/artwork/03.jpg",
       "/images/collections/melbourne-after-dark/artwork/04.jpg",
-      "/images/collections/melbourne-after-dark/artwork/05.jpg"
+      "/images/collections/melbourne-after-dark/artwork/05.jpg",
+      "/images/collections/melbourne-after-dark/artwork/06.jpg",
+      "/images/collections/melbourne-after-dark/artwork/07.jpg",
+      "/images/collections/melbourne-after-dark/artwork/08.jpg"
     ]
   },
   {
     "name": "St Kilda Vibes",
     "slug": "st-kilda-vibes",
-    "shortDescription": "Eight works. One suburb. Every version of it at once.",
-    "fullDescription": "St Kilda has never been just one thing — and this collection doesn't pretend otherwise. Luna Park grins from the dark like it always has. The Number 16 rounds the corner past the Palais under a sky that hasn't decided if it's burning or blooming. Catani Gardens at sunset. The foreshore rendered in Japanese woodblock ink, a white bird cutting across a blood moon. The Esplanade Hotel holding its ground against a swirling red sky like it has for a hundred years. Each work begins as an original photograph taken on location in St Kilda. Every stage from there is handled personally — digital and physical work, colour, composition, editing — moving between techniques as each piece demands. Eight pieces. The beach suburb, the gothic suburb, the glamorous suburb, the strange suburb — all of them true, all of them St Kilda. Suits coastal homes, Fitzroy Street apartments, and anything within earshot of the sea.",
+    "shortDescription": "Hyper-local St Kilda works for coastal homes and suburb-led campaigns.",
+    "fullDescription": "St Kilda Vibes is the clearest example of what hyper-local art can do for a listing. The collection carries the suburb with it — waterfront, palms, Luna Park energy and coastal edge — so a buyer sees something specific to the area, not a print pulled from a generic catalogue.",
     "isFeatured": false,
     "sortOrder": 2,
+    "category": "Place-led / suburb proof",
     "mockups": [
       "/images/collections/st-kilda-vibes/mockups/01.jpg",
       "/images/collections/st-kilda-vibes/mockups/02.jpg"
     ],
     "artwork": [
-      "/images/collections/st-kilda-vibes/artwork/01.png",
-      "/images/collections/st-kilda-vibes/artwork/02.png",
-      "/images/collections/st-kilda-vibes/artwork/03.png",
-      "/images/collections/st-kilda-vibes/artwork/04.png",
-      "/images/collections/st-kilda-vibes/artwork/05.png",
-      "/images/collections/st-kilda-vibes/artwork/06.jpg",
-      "/images/collections/st-kilda-vibes/artwork/07.jpg"
+      "/images/collections/st-kilda-vibes/artwork/01.jpg",
+      "/images/collections/st-kilda-vibes/artwork/02.jpg",
+      "/images/collections/st-kilda-vibes/artwork/03.jpg"
+    ]
+  },
+  {
+    "name": "Sands of Time",
+    "slug": "sands-of-time",
+    "shortDescription": "Warm, cinematic works made for framed gifts and premium handovers.",
+    "fullDescription": "Sands of Time is built for the emotional end of the campaign: the artwork becoming something the buyer keeps. Hourglass forms, moody coastlines and warm red-gold tones make it ideal for framed giclée prints, settlement gifts and the Deluxe ready-to-hang collection upgrade.",
+    "isFeatured": false,
+    "sortOrder": 3,
+    "category": "Settlement gift / deluxe",
+    "mockups": [
+      "/images/collections/sands-of-time/mockups/01.jpg",
+      "/images/collections/sands-of-time/mockups/02.jpg"
+    ],
+    "artwork": [
+      "/images/collections/sands-of-time/artwork/01.jpg",
+      "/images/collections/sands-of-time/artwork/02.jpg",
+      "/images/collections/sands-of-time/artwork/03.jpg",
+      "/images/collections/sands-of-time/artwork/04.jpg",
+      "/images/collections/sands-of-time/artwork/05.jpg",
+      "/images/collections/sands-of-time/artwork/06.jpg",
+      "/images/collections/sands-of-time/artwork/07.jpg",
+      "/images/collections/sands-of-time/artwork/08.jpg",
+      "/images/collections/sands-of-time/artwork/09.jpg",
+      "/images/collections/sands-of-time/artwork/10.jpg"
     ]
   },
   {
     "name": "Tāonga / The Living Land",
     "slug": "taonga-the-living-land",
-    "shortDescription": "Seven works. One inheritance. A country that never stopped breathing.",
-    "fullDescription": "Koru spirals holding entire coastlines inside their curl. Pou carved from something older than memory. Tūī cutting across feathers woven in gold, earth and ocean teal. Each work moves between the sacred and the elemental — flax and silver fern, waka on golden water, the New Zealand flag carried quietly in the tip of a feather like a declaration that needs no audience. Each piece begins as an original photograph taken on location. Every stage from there is handled personally — digital and physical work, colour, composition, editing — moving between techniques as each piece demands. Rich in ochre, forest green and deep Pacific blue, these works sit between illustration and ceremonial object. At home in any space that wants to feel both grounded and alive — particularly suited to new builds, light-filled interiors and homes where the land outside the window still means something.",
+    "shortDescription": "A grounded, place-led collection with Māori, Pacific and natural motifs.",
+    "fullDescription": "A warmer counterpoint to the darker city works: feathers, koru-like forms, carved figures, landscape and sunrise colour. This collection suits light-filled interiors, cultural/place-led campaigns and homes where the land, story and sense of belonging matter.",
     "isFeatured": false,
-    "sortOrder": 3,
+    "sortOrder": 4,
+    "category": "Place-led / warm interiors",
     "mockups": [
       "/images/collections/taonga-the-living-land/mockups/01.jpg",
       "/images/collections/taonga-the-living-land/mockups/02.jpg"
@@ -57,7 +84,110 @@
       "/images/collections/taonga-the-living-land/artwork/04.jpg",
       "/images/collections/taonga-the-living-land/artwork/05.jpg",
       "/images/collections/taonga-the-living-land/artwork/06.jpg",
-      "/images/collections/taonga-the-living-land/artwork/07.jpg"
+      "/images/collections/taonga-the-living-land/artwork/07.jpg",
+      "/images/collections/taonga-the-living-land/artwork/08.jpg"
+    ]
+  },
+  {
+    "name": "Puzzling Minds",
+    "slug": "puzzling-minds",
+    "shortDescription": "Surreal portraiture for studies, bedrooms and statement interiors.",
+    "fullDescription": "Puzzling Minds is a statement collection: introspective portraiture, puzzle-piece forms and dreamlike psychological tension. It is best used selectively for high-design apartments, bedrooms, studies and listings that need an intelligent visual hook.",
+    "isFeatured": false,
+    "sortOrder": 5,
+    "category": "Statement interiors",
+    "mockups": [
+      "/images/collections/puzzling-minds/mockups/01.jpg",
+      "/images/collections/puzzling-minds/mockups/02.jpg"
+    ],
+    "artwork": [
+      "/images/collections/puzzling-minds/artwork/01.jpg",
+      "/images/collections/puzzling-minds/artwork/02.jpg",
+      "/images/collections/puzzling-minds/artwork/03.jpg",
+      "/images/collections/puzzling-minds/artwork/04.jpg",
+      "/images/collections/puzzling-minds/artwork/05.jpg",
+      "/images/collections/puzzling-minds/artwork/06.jpg",
+      "/images/collections/puzzling-minds/artwork/07.jpg",
+      "/images/collections/puzzling-minds/artwork/08.jpg",
+      "/images/collections/puzzling-minds/artwork/09.jpg",
+      "/images/collections/puzzling-minds/artwork/10.jpg",
+      "/images/collections/puzzling-minds/artwork/11.jpg"
+    ]
+  },
+  {
+    "name": "The Complete Puzzle",
+    "slug": "the-complete-puzzle",
+    "shortDescription": "A tighter companion collection built around puzzle forms and bold colour.",
+    "fullDescription": "The Complete Puzzle extends the puzzle motif into a more graphic, cohesive set. It works well where several pieces need to hang together as a collection rather than as one isolated artwork.",
+    "isFeatured": false,
+    "sortOrder": 6,
+    "category": "Statement / collection set",
+    "mockups": [
+      "/images/collections/the-complete-puzzle/mockups/01.jpg",
+      "/images/collections/the-complete-puzzle/mockups/02.jpg"
+    ],
+    "artwork": [
+      "/images/collections/the-complete-puzzle/artwork/01.jpg",
+      "/images/collections/the-complete-puzzle/artwork/02.jpg",
+      "/images/collections/the-complete-puzzle/artwork/03.jpg",
+      "/images/collections/the-complete-puzzle/artwork/04.jpg",
+      "/images/collections/the-complete-puzzle/artwork/05.jpg",
+      "/images/collections/the-complete-puzzle/artwork/06.jpg",
+      "/images/collections/the-complete-puzzle/artwork/07.jpg",
+      "/images/collections/the-complete-puzzle/artwork/08.jpg",
+      "/images/collections/the-complete-puzzle/artwork/09.jpg"
+    ]
+  },
+  {
+    "name": "Existential Astronaut",
+    "slug": "existential-astronaut",
+    "shortDescription": "Cosmic, sepia-gold statement works for modern creative spaces.",
+    "fullDescription": "Existential Astronaut is for memorable interiors: studies, retreats, modern apartments and buyers with a more creative edge. The collection brings solitude, scale and cinematic sci-fi atmosphere without losing warmth.",
+    "isFeatured": false,
+    "sortOrder": 7,
+    "category": "Statement interiors",
+    "mockups": [
+      "/images/collections/existential-astronaut/mockups/01.jpg",
+      "/images/collections/existential-astronaut/mockups/02.jpg"
+    ],
+    "artwork": [
+      "/images/collections/existential-astronaut/artwork/01.jpg",
+      "/images/collections/existential-astronaut/artwork/02.jpg",
+      "/images/collections/existential-astronaut/artwork/03.jpg",
+      "/images/collections/existential-astronaut/artwork/04.jpg",
+      "/images/collections/existential-astronaut/artwork/05.jpg",
+      "/images/collections/existential-astronaut/artwork/06.jpg",
+      "/images/collections/existential-astronaut/artwork/07.jpg",
+      "/images/collections/existential-astronaut/artwork/08.jpg",
+      "/images/collections/existential-astronaut/artwork/09.jpg",
+      "/images/collections/existential-astronaut/artwork/10.jpg",
+      "/images/collections/existential-astronaut/artwork/11.jpg",
+      "/images/collections/existential-astronaut/artwork/12.jpg",
+      "/images/collections/existential-astronaut/artwork/13.jpg",
+      "/images/collections/existential-astronaut/artwork/14.jpg"
+    ]
+  },
+  {
+    "name": "Lollipops and Razorblades",
+    "slug": "lollipops-and-razorblades",
+    "shortDescription": "Whimsical-gothic works for bold, collector-style campaigns.",
+    "fullDescription": "Lollipops and Razorblades is the most personality-led collection: surreal, whimsical, gothic and slightly dangerous. It shows the range available when a listing needs a collector-grade statement rather than a safe decorative print.",
+    "isFeatured": false,
+    "sortOrder": 8,
+    "category": "Collector / personality",
+    "mockups": [
+      "/images/collections/lollipops-and-razorblades/mockups/01.jpg",
+      "/images/collections/lollipops-and-razorblades/mockups/02.jpg"
+    ],
+    "artwork": [
+      "/images/collections/lollipops-and-razorblades/artwork/01.jpg",
+      "/images/collections/lollipops-and-razorblades/artwork/02.jpg",
+      "/images/collections/lollipops-and-razorblades/artwork/03.jpg",
+      "/images/collections/lollipops-and-razorblades/artwork/04.jpg",
+      "/images/collections/lollipops-and-razorblades/artwork/05.jpg",
+      "/images/collections/lollipops-and-razorblades/artwork/06.jpg",
+      "/images/collections/lollipops-and-razorblades/artwork/07.jpg",
+      "/images/collections/lollipops-and-razorblades/artwork/08.jpg"
     ]
   }
 ]

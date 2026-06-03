@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SEOHead from '../components/SEOHead'
 import ScrollFadeIn from '../components/ScrollFadeIn'
@@ -8,263 +7,100 @@ import siteConfig from '../data/site-config.json'
 import collections from '../data/collections.json'
 import testimonials from '../data/testimonials.json'
 
+const SERVICE_CARDS = [
+  {
+    label: 'Win listings',
+    title: 'Show vendors a campaign edge.',
+    body: 'Give sellers a reason to choose your listing presentation: property-specific marketing assets, not the same generic staging every other agent can buy.',
+  },
+  {
+    label: 'Market faster',
+    title: 'One brief replaces three vendors.',
+    body: 'Digital staging, virtual tour presentation and settlement gift production are handled together. One round of direction. One invoice. 30-day terms.',
+  },
+  {
+    label: 'Create connection',
+    title: 'The campaign becomes part of the home.',
+    body: 'The artwork buyers see in the listing can become the framed artwork they receive at settlement. The marketing asset becomes the memory.',
+  },
+]
+
+const STEPS = [
+  ['1', 'Send the listing', 'Room photos, property description, suburb, buyer profile and campaign timing. That is the brief.'],
+  ['2', 'Staging assets are built', 'Original collection artwork is selected and digitally integrated into the property imagery for campaign use.'],
+  ['3', 'Tour + print options', 'The staged rooms can become virtual-tour visuals, print selections and framed giclée upgrade options.'],
+  ['4', 'Settlement handover', 'Approved prints are dispatched ready for the buyer gift. Deluxe packages arrive framed and ready to hang.'],
+]
+
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
-  const { business, hero, inkOriginals, process: proc } = siteConfig
-
-  useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 80)
-    return () => clearTimeout(t)
-  }, [])
-
-  const txt = (delay) => ({
-    opacity: mounted ? 1 : 0,
-    transform: mounted ? 'translateY(0)' : 'translateY(20px)',
-    transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
-  })
-
-  const heroCards = Object.values(hero.images || {}).filter(Boolean)
-
-  const cardStyle = (i) => ({
-    opacity: mounted ? 1 : 0,
-    transform: mounted ? 'translateY(0)' : 'translateY(24px)',
-    transition: `opacity 0.6s ease ${300 + i * 200}ms, transform 0.6s ease ${300 + i * 200}ms`,
-  })
-
+  const { business, hero, pricing, process: proc } = siteConfig
   const sorted = [...collections].sort((a, b) => a.sortOrder - b.sortOrder)
   const featured = sorted.find((c) => c.isFeatured)
   const rest = sorted.filter((c) => !c.isFeatured)
-
-  const activeTestimonials = testimonials
-    .filter((t) => t.isActive)
-    .sort((a, b) => a.sortOrder - b.sortOrder)
+  const activeTestimonials = testimonials.filter((t) => t.isActive).sort((a, b) => a.sortOrder - b.sortOrder)
 
   return (
     <>
       <SEOHead
         title={null}
-        description="Original hyper-local art staged on your walls, printed for your listing, gifted to your buyer. Starting from $295 AUD."
+        description="Digital staging, virtual-tour presentation and settlement gifts handled together for real estate agents."
       />
 
-      {/* ── SECTION A: HERO ─────────────────────────────────── */}
-      <section className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center px-6 py-24 pt-28">
-        <div className="max-w-4xl mx-auto text-center mb-16 w-full">
-          <p style={txt(0)} className="text-[10px] uppercase tracking-[0.25em] text-[#cc0000] mb-5">
-            {hero.label}
-          </p>
-          <h1 style={txt(200)} className="font-playfair text-5xl md:text-6xl lg:text-7xl text-[#f5f0e8] mb-5 leading-tight">
-            {business.name}
-          </h1>
-          <p style={txt(400)} className="font-playfair italic text-xl md:text-2xl text-[#f5f0e8]/80 mb-5">
-            {hero.headline}
-          </p>
-          <p style={txt(600)} className="text-[#888888] text-base leading-relaxed max-w-[520px] mx-auto mb-10">
-            {hero.subtext}
-          </p>
-          <div style={txt(800)}>
-            <Button to="/collections" variant="primary">
-              {hero.cta}
-            </Button>
-          </div>
-        </div>
-
-        {/* Hero image pair — clean, no labels, perfectly aligned */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-5 items-stretch justify-center w-full max-w-5xl">
-          {heroCards.map((src, i) => (
-            <div
-              key={i}
-              style={cardStyle(i)}
-              className="w-full md:flex-1 overflow-hidden shadow-2xl"
-            >
-              <img
-                src={src}
-                alt="The Full Picture — digital art staging"
-                className="w-full h-full object-cover block"
-                onError={(e) => {
-                  e.target.parentElement.classList.add('aspect-[4/3]', 'bg-[#1a1a1a]')
-                  e.target.style.display = 'none'
-                }}
-              />
+      <section className="relative min-h-screen bg-[#0a0a0a] overflow-hidden px-6 pt-28 pb-20 flex items-center">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(204,0,0,0.16),transparent_35%),linear-gradient(180deg,#0a0a0a,#111111)]" />
+        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center w-full">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.28em] text-[#cc0000] mb-5">{hero.label}</p>
+            <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl text-[#f5f0e8] leading-tight mb-6">
+              {hero.headline}
+            </h1>
+            <p className="text-[#b6b0a7] text-base md:text-lg leading-relaxed max-w-xl mb-9">
+              {hero.subtext}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <Button to="/contact" variant="primary">{hero.cta}</Button>
+              <Button to="/how-it-works" variant="outline">{hero.secondaryCta}</Button>
             </div>
-          ))}
+            <div className="grid grid-cols-3 gap-5 max-w-xl border-t border-[#222] pt-7">
+              {['Staging', 'Virtual tour', 'Settlement gift'].map((item) => (
+                <div key={item}>
+                  <p className="font-playfair text-[#f5f0e8] text-lg">{item}</p>
+                  <p className="text-[#666] text-xs mt-1">handled together</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 border border-[#cc0000]/20" />
+            <div className="relative bg-[#111111] border border-[#242424] p-3 shadow-2xl">
+              <img src={hero.images.card1} alt="Digitally staged listing using The Full Picture artwork" className="w-full aspect-[16/10] object-cover block" />
+            </div>
+            <div className="hidden md:block absolute -bottom-12 -left-10 w-[38%] bg-[#111111] border border-[#2a2a2a] p-2 shadow-2xl">
+              <img src={hero.images.card2} alt="Framed artwork cards for settlement gifting" className="w-full aspect-[4/5] object-cover block" />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── SECTION B: WHAT I DO ───────────────────────────── */}
       <ScrollFadeIn>
         <section className="bg-[#111111] py-20 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-12">What I Do</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#cc0000] mb-4">Digital Staging</p>
-                <p className="text-[#888888] text-sm leading-relaxed">
-                  I take your listing and place original, hyper-local artwork directly onto your walls — digitally, before a single print is ordered. You receive fully staged images of your actual property to use in your marketing and listing photos. The art is selected specifically for the property. Nothing is pulled from a generic catalogue.
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#cc0000] mb-4">Prints &amp; Settlement Gifts</p>
-                <p className="text-[#888888] text-sm leading-relaxed">
-                  Once you have approved the staged set, you choose which pieces go to print. Physical prints are dispatched to you — ready to gift to the buyer at settlement. That moment is yours. A piece of original art, handed over by you. Something that goes on a wall, stays in the home, and keeps your name in the room long after the commission is banked.
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#cc0000] mb-4">Virtual Tours</p>
-                <p className="text-[#888888] text-sm leading-relaxed">
-                  Every package includes a professional virtual tour of the property, built from your room photos and property description. One brief covers the staging, the tour, and the prints. Nothing for you to coordinate separately.
-                </p>
-              </div>
+            <div className="max-w-3xl mb-12">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#cc0000] mb-4">What you are really buying</p>
+              <h2 className="font-playfair text-3xl md:text-5xl text-[#f5f0e8] leading-tight mb-5">
+                A complete real-estate marketing transformation service.
+              </h2>
+              <p className="text-[#888888] text-sm md:text-base leading-relaxed">
+                Not just artwork. Not just staging. Not just a tour. The Full Picture gives agents a way to present the listing, create buyer emotion and deliver a memorable handover without physical staging costs.
+              </p>
             </div>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      {/* ── SECTION C: ART STAYS ──────────────────────────── */}
-      <ScrollFadeIn>
-        <section className="bg-[#0a0a0a] py-20 px-6">
-          <div className="max-w-[680px] mx-auto pl-8 border-l-4 border-[#cc0000]">
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-8">
-              Art Stays. Everything Else Doesn&apos;t.
-            </h2>
-            <div className="space-y-5 text-[#888888] text-sm leading-relaxed">
-              <p>Most settlement gifts are gone within the week. A bottle of wine. A hamper. Something opened, enjoyed, and forgotten before the keys are cold.</p>
-              <p>A print on a wall is different. It gets framed. It gets placed. It becomes part of the home.</p>
-              <p>Every dinner guest who pauses and asks where it came from — the buyer tells them your name. That conversation happens once a month. For years.</p>
-              <p>That is not a gift. That is a referral strategy built into the settlement itself.</p>
-            </div>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      {/* ── SECTION D: WHAT MAKES THIS DIFFERENT ──────────── */}
-      <ScrollFadeIn>
-        <section className="bg-[#111111] py-20 px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-12">
-              What Makes This Different
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#cc0000] mb-4">Art Built For The Suburb</p>
-                <p className="text-[#888888] text-sm leading-relaxed">
-                  The artwork placed on your listing walls is not generic furniture from a catalogue. It is original art built around a specific place — the streets, the landmarks, the character of the area. A buyer purchasing in a suburb recognises something of it in the work. That connection is what makes it worth keeping.
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#cc0000] mb-4">The Staging And The Gift Are The Same Thing</p>
-                <p className="text-[#888888] text-sm leading-relaxed">
-                  The artwork placed on the walls during digital staging is the same artwork the buyer takes home at settlement. By the time the sale is complete the buyer has already spent weeks looking at their print on the walls of their new home. They already know where it is going.
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#cc0000] mb-4">One Brief. Everything Handled.</p>
-                <p className="text-[#888888] text-sm leading-relaxed">
-                  Digital staging, virtual tour, and settlement gift sourced separately means three vendors, three rounds of back-and-forth, three invoices. Send room photos and a property description. Everything else is handled. One invoice. 30-day terms.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      {/* ── SECTION E: INK ORIGINALS ──────────────────────── */}
-      <ScrollFadeIn>
-        <section className="bg-[#1a1a1a] py-20 px-6">
-          <div className="max-w-4xl mx-auto border border-[#c9a84c] p-10 md:p-14">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#c9a84c] mb-5">Ink Originals</p>
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-5">
-              {inkOriginals.heading}
-            </h2>
-            <p className="text-[#888888] text-sm leading-relaxed mb-7 max-w-lg">
-              {inkOriginals.body}
-            </p>
-            <ul className="space-y-2 mb-8">
-              {inkOriginals.details.map((d, i) => (
-                <li key={i} className="flex items-start gap-3 text-[#888888] text-sm">
-                  <span className="text-[#c9a84c] mt-0.5 flex-shrink-0">—</span>
-                  {d}
-                </li>
-              ))}
-            </ul>
-            <Link
-              to="/contact"
-              className="text-[#f5f0e8] text-sm hover:text-[#cc0000] transition-colors underline underline-offset-4"
-            >
-              To enquire, get in touch.
-            </Link>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      {/* ── SECTION F: COLLECTIONS PREVIEW ────────────────── */}
-      <ScrollFadeIn>
-        <section className="bg-[#0a0a0a] py-20 px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-10">
-              Current Collections
-            </h2>
-
-            {featured && (
-              <div className="mb-8">
-                <CollectionCard collection={featured} featured />
-              </div>
-            )}
-
-            {rest.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
-                {rest.map((c) => (
-                  <CollectionCard key={c.slug} collection={c} />
-                ))}
-              </div>
-            )}
-
-            <Link
-              to="/collections"
-              className="text-sm text-[#cc0000] hover:text-[#ff1a1a] transition-colors tracking-wide underline underline-offset-4"
-            >
-              All Collections →
-            </Link>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      {/* ── SECTION G: HOW THE WORK IS MADE ──────────────── */}
-      <ScrollFadeIn>
-        <section className="bg-[#111111] py-20 px-6">
-          <div className="max-w-[680px] mx-auto text-center">
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-8">
-              {proc.heading}
-            </h2>
-            <p className="font-playfair italic text-[#888888] leading-relaxed text-lg">
-              {proc.body}
-            </p>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      {/* ── SECTION H: HOW IT WORKS ───────────────────────── */}
-      <ScrollFadeIn>
-        <section className="bg-[#0a0a0a] py-20 px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-14">How It Works</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
-              {[
-                { n: '1', title: 'Send Me The Listing', body: 'Room photos and a property description. That is the brief.' },
-                { n: '2', title: 'I Stage It', body: 'Original artwork placed on your walls — digitally. Staged images back to you to approve and use in your marketing.' },
-                { n: '3', title: 'Prints Are Dispatched To You', body: 'You nominate which pieces go to print and what sizes you need. Prints are produced and dispatched to you — ready to gift to your buyer at settlement.' },
-                { n: '4', title: 'Invoiced On 30 Days', body: 'One invoice. 30-day terms. No upfront payment.' },
-              ].map((step) => (
-                <div key={step.n} className="relative">
-                  <div
-                    className="absolute -top-4 -left-2 font-playfair font-bold text-[#cc0000]/10 select-none leading-none"
-                    style={{ fontSize: '7rem' }}
-                  >
-                    {step.n}
-                  </div>
-                  <div className="relative pt-10">
-                    <h3 className="font-playfair text-lg text-[#f5f0e8] mb-3">{step.title}</h3>
-                    <p className="text-[#888888] text-sm leading-relaxed">{step.body}</p>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {SERVICE_CARDS.map((card) => (
+                <div key={card.label} className="border border-[#242424] bg-[#0d0d0d] p-8 hover:border-[#cc0000]/60 transition-colors">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-[#cc0000] mb-5">{card.label}</p>
+                  <h3 className="font-playfair text-2xl text-[#f5f0e8] mb-4">{card.title}</h3>
+                  <p className="text-[#888888] text-sm leading-relaxed">{card.body}</p>
                 </div>
               ))}
             </div>
@@ -272,38 +108,119 @@ export default function Home() {
         </section>
       </ScrollFadeIn>
 
-      {/* ── SECTION I: CUSTOM WORK ────────────────────────── */}
       <ScrollFadeIn>
-        <section className="bg-[#1a1a1a] py-20 px-6">
-          <div className="max-w-2xl mx-auto border-l-2 border-[#cc0000] pl-8">
-            <p className="font-playfair text-2xl text-[#f5f0e8] mb-4">
-              Don&apos;t see your suburb?
-            </p>
-            <p className="text-[#888888] text-sm leading-relaxed mb-8">
-              If a collection doesn&apos;t exist for your area yet, I&apos;ll build one. Brief me on the suburb — the streets, the landmarks, the feeling of the neighbourhood.
-            </p>
-            <Button to="/contact" variant="outline">Get In Touch</Button>
+        <section className="bg-[#0a0a0a] py-20 px-6">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#cc0000] mb-4">Proof in the room</p>
+              <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-6">
+                Actual collection artwork, staged into property marketing.
+              </h2>
+              <p className="text-[#888888] text-sm leading-relaxed mb-6">
+                Your listing images become campaign assets. The same selected artworks can then appear in the tour, the print package and the settlement gift.
+              </p>
+              <p className="font-playfair italic text-[#f5f0e8] text-xl border-l-2 border-[#cc0000] pl-5">
+                {proc.body}
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <img src="/images/service/st-kilda-dining.png" alt="St Kilda dining room artwork staging" className="w-full h-full object-cover bg-[#111]" />
+              <img src="/images/service/st-kilda-bedroom.png" alt="St Kilda bedroom artwork staging" className="w-full h-full object-cover bg-[#111] mt-10" />
+            </div>
           </div>
         </section>
       </ScrollFadeIn>
 
-      {/* ── TESTIMONIALS (only if active entries exist) ───── */}
+      <ScrollFadeIn>
+        <section className="bg-[#111111] py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-14">How it works</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+              {STEPS.map(([n, title, body]) => (
+                <div key={n} className="relative border-t border-[#333] pt-8">
+                  <div className="font-playfair text-6xl text-[#cc0000]/20 absolute -top-8 right-0">{n}</div>
+                  <h3 className="font-playfair text-xl text-[#f5f0e8] mb-3 relative">{title}</h3>
+                  <p className="text-[#888888] text-sm leading-relaxed relative">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollFadeIn>
+
+      <ScrollFadeIn>
+        <section className="bg-[#0a0a0a] py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-2xl mb-12">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#cc0000] mb-4">Packages</p>
+              <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-5">Choose the campaign level. Upgrade the handover.</h2>
+              <p className="text-[#888888] text-sm leading-relaxed">Every package is built around one brief and one invoice. The Deluxe upgrade can be added to any package when the campaign calls for a premium framed handover.</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+              {pricing.tiers.map((tier) => (
+                <div key={tier.name} className="border border-[#242424] bg-[#111111] p-8">
+                  <h3 className="font-playfair text-2xl text-[#f5f0e8] mb-4">{tier.name}</h3>
+                  <p className="text-[#888888] text-sm leading-relaxed mb-7">{tier.description}</p>
+                  <div className="space-y-3 text-sm">
+                    <p className="flex justify-between border-b border-[#222] pb-2"><span className="text-[#777]">Studio / 1 bed</span><span className="text-[#f5f0e8]">{tier.studio}</span></p>
+                    <p className="flex justify-between border-b border-[#222] pb-2"><span className="text-[#777]">2–4 bed</span><span className="text-[#f5f0e8]">{tier.standard}</span></p>
+                    <p className="flex justify-between gap-4"><span className="text-[#777]">Luxury</span><span className="text-[#f5f0e8] text-right">{tier.luxury}</span></p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="border border-[#c9a84c]/70 bg-[#1a1a1a] p-8 md:p-10 flex flex-col lg:flex-row gap-8 items-start">
+              <div className="flex-1">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#c9a84c] mb-4">Deluxe upgrade</p>
+                <h3 className="font-playfair text-2xl md:text-3xl text-[#f5f0e8] mb-4">Framed giclée collection, ready to hang.</h3>
+                <p className="text-[#888888] text-sm leading-relaxed">{pricing.deluxe}</p>
+              </div>
+              <img src="/images/service/framed-cards.png" alt="Framed giclée artwork cards" className="w-full lg:w-72 object-cover bg-[#0a0a0a]" />
+            </div>
+            <p className="text-[#555] text-xs mt-6">{pricing.paymentNote}</p>
+          </div>
+        </section>
+      </ScrollFadeIn>
+
+      <ScrollFadeIn>
+        <section className="bg-[#111111] py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#cc0000] mb-4">Collections</p>
+                <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8]">Artwork selected for the property.</h2>
+              </div>
+              <Link to="/collections" className="text-sm text-[#cc0000] hover:text-[#ff1a1a] underline underline-offset-4">All Collections →</Link>
+            </div>
+            {featured && <div className="mb-8"><CollectionCard collection={featured} featured /></div>}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {rest.slice(0, 6).map((c) => <CollectionCard key={c.slug} collection={c} />)}
+            </div>
+          </div>
+        </section>
+      </ScrollFadeIn>
+
+      <ScrollFadeIn>
+        <section className="bg-[#0a0a0a] py-20 px-6 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-5">Have a listing coming up?</h2>
+            <p className="text-[#888888] text-sm leading-relaxed mb-8">Send the suburb, room photos and campaign timing. I will recommend the best package and collection direction.</p>
+            <Button to="/contact" variant="primary">Start a listing brief</Button>
+          </div>
+        </section>
+      </ScrollFadeIn>
+
       {activeTestimonials.length > 0 && (
         <ScrollFadeIn>
-          <section className="bg-[#0a0a0a] py-20 px-6">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="font-playfair text-3xl text-[#f5f0e8] mb-10">What Agents Say</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {activeTestimonials.map((t, i) => (
-                  <div key={i} className="bg-[#111111] p-8 border-l-2 border-[#cc0000]">
-                    <p className="font-playfair italic text-[#f5f0e8] text-lg mb-6 leading-relaxed">
-                      &ldquo;{t.quote}&rdquo;
-                    </p>
-                    <p className="text-[#f5f0e8] text-sm font-medium">{t.agentName}</p>
-                    <p className="text-[#888888] text-xs">{t.agency}</p>
-                  </div>
-                ))}
-              </div>
+          <section className="bg-[#111111] py-20 px-6">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+              {activeTestimonials.map((t, i) => (
+                <div key={i} className="border-l-2 border-[#cc0000] pl-6">
+                  <p className="font-playfair italic text-[#f5f0e8] text-lg mb-5">“{t.quote}”</p>
+                  <p className="text-[#f5f0e8] text-sm">{t.agentName}</p>
+                  <p className="text-[#888888] text-xs">{t.agency}</p>
+                </div>
+              ))}
             </div>
           </section>
         </ScrollFadeIn>

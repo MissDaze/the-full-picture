@@ -7,33 +7,47 @@
     "location": "Melbourne, Australia"
   },
   "hero": {
-    "label": "Fine Art for Real Estate",
-    "headline": "Your listing. Fully considered.",
-    "subtext": "Original hyper-local art — staged on your walls, printed for your listing, gifted to your buyer.",
-    "cta": "See The Work",
+    "label": "Real Estate Marketing Transformation",
+    "headline": "Win the listing. Elevate the campaign. Leave something behind.",
+    "subtext": "A complete listing-to-settlement service for agents: digitally staged campaign imagery, virtual-tour presentation, and buyer gifts built from original artwork selected for the property.",
+    "cta": "Start a listing brief",
+    "secondaryCta": "See the transformation",
     "images": {
-      "card1": "/images/hero/01.png",
-      "card2": "/images/hero/02.jpg"
+      "card1": "/images/service/st-kilda-livingroom.png",
+      "card2": "/images/service/framed-cards.png"
     }
   },
   "pricing": {
-    "startingFrom": "$295 AUD",
-    "baseIncludes": [
-      "Digital staging of your listing",
-      "Professional virtual tour",
-      "1 × A3 print",
-      "1 × A4 print",
-      "2 × A5 prints",
-      "Prints dispatched to you, ready to gift",
-      "30-day invoicing — no upfront payment"
+    "tiers": [
+      {
+        "name": "Staging Only",
+        "studio": "$95",
+        "standard": "$195",
+        "luxury": "From $45/room + $25/feature",
+        "description": "Artwork digitally integrated into your listing images for campaign use."
+      },
+      {
+        "name": "Staging + Tour",
+        "studio": "$295",
+        "standard": "$495",
+        "luxury": "POA",
+        "description": "Staged campaign imagery plus a polished virtual-tour presentation."
+      },
+      {
+        "name": "Staging + Tour + Print",
+        "studio": "$450",
+        "standard": "$695",
+        "luxury": "POA",
+        "description": "Campaign assets plus physical prints dispatched ready for settlement."
+      }
     ],
-    "scalesNote": "Every property is different. Price scales with number of rooms, print sizes and quantities, and whether a custom collection is needed for the suburb. Get in touch with the property details and I will put a quote together.",
-    "paymentNote": "30-day invoicing on all packages. No upfront payment required."
+    "deluxe": "Any package can be upgraded into archival giclée prints, professionally framed and delivered ready to hang. The buyer keeps the full staged collection. Quoted per campaign.",
+    "paymentNote": "One invoice. 30-day terms. No upfront payment required."
   },
   "inkOriginals": {
     "heading": "Ink Originals",
-    "subheading": "For listings that need something beyond a print.",
-    "body": "Select works are available as hand-drawn ink reproductions — each one rendered by hand from the original composition using fineliners and gel pens. No two are identical. These are not prints. They are original works. Suited to prestige listings and high-end properties where the art needs to be as considered as the home itself.",
+    "subheading": "For prestige listings that need something beyond a print.",
+    "body": "Select works are available as hand-drawn ink reproductions — each rendered by hand from the original composition using fineliners and gel pens. No two are identical. These are original works, suited to prestige campaigns where the artwork needs to feel as considered as the home itself.",
     "details": [
       "Available by request only",
       "Quote on application",
@@ -41,14 +55,14 @@
     ]
   },
   "process": {
-    "heading": "How The Work Is Made",
-    "body": "Each work begins as an original photograph taken on location in the subject suburb. From there, every stage is handled personally — moving between digital and physical work, through colour, composition, and editing, as each piece demands. Some of it is digital. Some of it is by hand. All of it is made by the same person. The result is original art that could only have been made by someone who was actually there. For Ink Originals, the finished composition is rendered entirely using fineliners and gel pens — a process that takes a minimum of one week per piece."
+    "heading": "From campaign asset to buyer gift.",
+    "body": "The artwork used in the listing campaign is the artwork the buyer can receive at settlement. They see it in the marketing, imagine it in the home, then keep it as part of the handover."
   },
   "about": {
-    "heading": "The Full Picture",
-    "subheading": "What we do. How we do it.",
-    "body": "[TO BE ADDED]",
-    "image": "/images/about/brand.jpg"
+    "heading": "A complete marketing transformation service.",
+    "subheading": "Built for agents who need listings to feel considered without managing three separate vendors.",
+    "body": "The Full Picture brings digital staging, virtual-tour presentation and settlement gifting into one service. The art is original and selected around the property, but the outcome is practical: one brief, one invoice, faster campaign assets, stronger buyer connection and a gift that keeps the agent in the room after settlement.",
+    "image": "/images/service/st-kilda-dining.png"
   },
   "telegram": {
     "botToken": "8737108571:AAFWHZa3_ixOzf0bEgYtgXvd-RXfha-0CAw",

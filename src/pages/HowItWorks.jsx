@@ -10,23 +10,23 @@ import siteConfig from '../data/site-config.json'
 const STEPS = [
   {
     n: '1',
-    title: 'Send Me The Listing',
-    body: 'All I need to get started is a set of room photos — one per room — and a short description of the property. Style, suburb, the kind of buyer you are expecting. That is the brief. Nothing else required from you at this stage.',
+    title: 'Send the listing brief',
+    body: 'Room photos, property description, suburb, buyer profile and campaign timing. No separate staging brief, tour brief and gifting brief required.',
   },
   {
     n: '2',
-    title: 'I Stage It Digitally',
-    body: 'I select artwork from the collection that suits the property and place it onto the walls of your listing digitally. You receive fully staged images of your actual rooms — not a generic showroom — to use in your listing photos and marketing. If the existing collections suit the property I will work from those. If the suburb needs its own work I will build it.',
+    title: 'The campaign assets are built',
+    body: 'Collection artwork is selected to suit the property and integrated into the listing imagery. The same direction informs the virtual-tour presentation.',
   },
   {
     n: '3',
-    title: 'You Approve. Prints Are Dispatched To You.',
-    body: 'Once you have approved the staged set you nominate which pieces go to print and in what sizes. Physical prints are produced and dispatched to you. The virtual tour is built from your photos and description and delivered in the same round. You gift the print to your buyer at settlement — that moment is yours to own.',
+    title: 'Approve the direction',
+    body: 'You approve the staged visuals, select print options, and decide whether the campaign needs the Deluxe framed giclée upgrade.',
   },
   {
     n: '4',
-    title: 'One Invoice. 30 Days.',
-    body: 'Everything in a single invoice on 30-day terms. Digital staging. Virtual tour. Physical prints. No upfront payment. No multiple vendors. No chasing.',
+    title: 'Gift the buyer something that lasts',
+    body: 'Prints are dispatched ready for settlement. The buyer receives artwork they have already seen in the home they purchased.',
   },
 ]
 
@@ -37,63 +37,56 @@ export default function HowItWorks() {
 
   return (
     <>
-      <SEOHead title="How It Works" description="One brief. Everything handled." />
-      <PageHero title="How It Works" subtitle="One brief. Everything handled." />
+      <SEOHead title="How It Works" description="One brief. One invoice. Staging, tour and settlement gift handled." />
+      <PageHero title="How It Works" subtitle="One brief. One invoice. A complete listing-to-settlement package." />
 
-      {/* ── Steps ─────────────────────────────────────────── */}
       <ScrollFadeIn>
         <section className="bg-[#0a0a0a] py-20 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 xl:grid-cols-4 gap-10 md:gap-8">
-              {STEPS.map((step) => (
-                <div key={step.n} className="relative">
-                  <div
-                    className="absolute -top-4 -left-2 font-playfair font-bold text-[#cc0000]/10 select-none leading-none"
-                    style={{ fontSize: '7rem' }}
-                  >
-                    {step.n}
-                  </div>
-                  <div className="relative pt-12">
-                    <h3 className="font-playfair text-lg text-[#f5f0e8] mb-3">{step.title}</h3>
-                    <p className="text-[#888888] text-sm leading-relaxed">{step.body}</p>
-                  </div>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 xl:grid-cols-4 gap-10 md:gap-8">
+            {STEPS.map((step) => (
+              <div key={step.n} className="relative border-t border-[#333] pt-10">
+                <div className="absolute -top-10 right-0 font-playfair font-bold text-[#cc0000]/15 select-none leading-none text-7xl">
+                  {step.n}
                 </div>
-              ))}
-            </div>
+                <h3 className="font-playfair text-xl text-[#f5f0e8] mb-4 relative">{step.title}</h3>
+                <p className="text-[#888888] text-sm leading-relaxed relative">{step.body}</p>
+              </div>
+            ))}
           </div>
         </section>
       </ScrollFadeIn>
 
-      {/* ── Pricing ───────────────────────────────────────── */}
       <ScrollFadeIn>
         <section className="bg-[#111111] py-20 px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-10">Pricing</h2>
-
-            <div className="border border-[#cc0000] p-10 md:p-14 mb-6">
-              <p className="font-playfair text-2xl text-[#f5f0e8] mb-2">The Full Picture</p>
-              <p className="text-[#888888] text-sm mb-8">Everything handled. One brief.</p>
-
-              <p className="font-playfair text-4xl text-[#cc0000] mb-8">
-                From {pricing.startingFrom}
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                {pricing.baseIncludes.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-[#f5f0e8]">
-                    <span className="text-[#cc0000] mt-0.5 flex-shrink-0">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-[#888888] text-sm leading-relaxed border-t border-[#1a1a1a] pt-6">
-                {pricing.scalesNote}
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-2xl mb-12">
+              <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-5">Packages</h2>
+              <p className="text-[#888888] text-sm leading-relaxed">
+                Choose the service level for the campaign. Any package can be upgraded into a premium framed handover.
               </p>
             </div>
 
-            <p className="text-[#555] text-xs leading-relaxed mb-10">{pricing.paymentNote}</p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+              {pricing.tiers.map((tier) => (
+                <div key={tier.name} className="border border-[#242424] bg-[#0d0d0d] p-8">
+                  <h3 className="font-playfair text-2xl text-[#f5f0e8] mb-4">{tier.name}</h3>
+                  <p className="text-[#888888] text-sm leading-relaxed mb-7">{tier.description}</p>
+                  <div className="space-y-3 text-sm">
+                    <p className="flex justify-between border-b border-[#222] pb-2"><span className="text-[#777]">Studio / 1 bed</span><span className="text-[#f5f0e8]">{tier.studio}</span></p>
+                    <p className="flex justify-between border-b border-[#222] pb-2"><span className="text-[#777]">2–4 bed</span><span className="text-[#f5f0e8]">{tier.standard}</span></p>
+                    <p className="flex justify-between gap-4"><span className="text-[#777]">Luxury</span><span className="text-[#f5f0e8] text-right">{tier.luxury}</span></p>
+                  </div>
+                </div>
+              ))}
+            </div>
 
+            <div className="border border-[#c9a84c]/70 bg-[#1a1a1a] p-8 md:p-10 mb-8">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#c9a84c] mb-4">Deluxe upgrade</p>
+              <h3 className="font-playfair text-2xl md:text-3xl text-[#f5f0e8] mb-4">Framed giclée collection, ready to hang.</h3>
+              <p className="text-[#888888] text-sm leading-relaxed max-w-3xl">{pricing.deluxe}</p>
+            </div>
+
+            <p className="text-[#555] text-xs leading-relaxed mb-10">{pricing.paymentNote}</p>
             <Button
               variant="primary"
               onClick={() => {
@@ -107,35 +100,27 @@ export default function HowItWorks() {
         </section>
       </ScrollFadeIn>
 
-      {/* ── Art Stays ─────────────────────────────────────── */}
       <ScrollFadeIn>
         <section className="bg-[#0a0a0a] py-20 px-6">
-          <div className="max-w-[680px] mx-auto pl-8 border-l-4 border-[#cc0000]">
+          <div className="max-w-[720px] mx-auto pl-8 border-l-4 border-[#cc0000]">
             <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-8">
-              Art Stays. Everything Else Doesn&apos;t.
+              {proc.heading}
             </h2>
-            <div className="space-y-5 text-[#888888] text-sm leading-relaxed">
-              <p>Most settlement gifts are gone within the week. A bottle of wine. A hamper. Something opened, enjoyed, and forgotten before the keys are cold.</p>
-              <p>A print on a wall is different. It gets framed. It gets placed. It becomes part of the home.</p>
-              <p>Every dinner guest who pauses and asks where it came from — the buyer tells them your name. That conversation happens once a month. For years.</p>
-              <p>That is not a gift. That is a referral strategy built into the settlement itself.</p>
-            </div>
+            <p className="text-[#888888] text-sm leading-relaxed mb-5">{proc.body}</p>
+            <p className="text-[#888888] text-sm leading-relaxed">
+              A bottle of wine disappears. A hamper gets eaten. A framed print stays in the home, starts conversations, and keeps the agent attached to the moment long after the campaign is over.
+            </p>
           </div>
         </section>
       </ScrollFadeIn>
 
-      {/* ── Ink Originals ─────────────────────────────────── */}
       <ScrollFadeIn>
         <section className="bg-[#1a1a1a] py-20 px-6">
           <div className="max-w-4xl mx-auto border border-[#c9a84c] p-10 md:p-14">
             <p className="text-[10px] uppercase tracking-[0.2em] text-[#c9a84c] mb-5">Ink Originals</p>
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-2">
-              {inkOriginals.heading}
-            </h2>
+            <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-2">{inkOriginals.heading}</h2>
             <p className="text-[#888888] text-sm mb-8">{inkOriginals.subheading}</p>
-            <p className="text-[#888888] text-sm leading-relaxed mb-7 max-w-lg">
-              {inkOriginals.body}
-            </p>
+            <p className="text-[#888888] text-sm leading-relaxed mb-7 max-w-lg">{inkOriginals.body}</p>
             <ul className="space-y-2 mb-8">
               {inkOriginals.details.map((d, i) => (
                 <li key={i} className="flex items-start gap-3 text-[#888888] text-sm">
@@ -144,33 +129,9 @@ export default function HowItWorks() {
                 </li>
               ))}
             </ul>
-            <p className="text-[#888888] text-sm leading-relaxed mb-6 border-t border-[#333] pt-6">
-              {proc.body}
-            </p>
-            <p className="text-[#888888] text-sm leading-relaxed mb-8">
-              For Ink Originals, the finished composition is then rendered entirely by hand using fineliners and gel pens. This is a process that takes a minimum of one week per piece. No two Ink Originals are identical.
-            </p>
-            <Link
-              to="/contact"
-              className="text-[#f5f0e8] text-sm hover:text-[#cc0000] transition-colors underline underline-offset-4"
-            >
-              Enquire
+            <Link to="/contact" className="text-[#f5f0e8] text-sm hover:text-[#cc0000] transition-colors underline underline-offset-4">
+              Enquire →
             </Link>
-          </div>
-        </section>
-      </ScrollFadeIn>
-
-      {/* ── Custom Commissions ────────────────────────────── */}
-      <ScrollFadeIn>
-        <section className="bg-[#0a0a0a] py-20 px-6">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="font-playfair text-2xl md:text-3xl text-[#f5f0e8] mb-5">
-              Need A Collection Built For Your Suburb?
-            </h2>
-            <p className="text-[#888888] text-sm leading-relaxed mb-8">
-              If your market does not have a collection yet it can. Brief me on the suburb — the streets, the landmarks, the feeling of the place — and I will develop something specific to your market. Custom commission inquiries welcome.
-            </p>
-            <Button to="/contact" variant="outline">Get In Touch</Button>
           </div>
         </section>
       </ScrollFadeIn>
