@@ -9,7 +9,7 @@
   "hero": {
     "label": "Real Estate Marketing Transformation",
     "headline": "Win the listing. Elevate the campaign. Leave something behind.",
-    "subtext": "A complete listing-to-settlement service for agents: digitally staged campaign imagery, virtual-tour presentation, and buyer gifts built from original artwork selected for the property.",
+    "subtext": "A listing-to-settlement service for real estate agents who want stronger vendor presentations, better campaign assets, video tour content, faster marketing, and a buyer gift that keeps the agent remembered after settlement.",
     "cta": "Start a listing brief",
     "secondaryCta": "See the transformation",
     "images": {
@@ -31,7 +31,7 @@
         "studio": "$295",
         "standard": "$495",
         "luxury": "POA",
-        "description": "Staged campaign imagery plus a polished virtual-tour presentation."
+        "description": "Staged campaign imagery plus a polished digital video tour for campaign use."
       },
       {
         "name": "Staging + Tour + Print",
@@ -42,7 +42,7 @@
       }
     ],
     "deluxe": "Any package can be upgraded into archival giclée prints, professionally framed and delivered ready to hang. The buyer keeps the full staged collection. Quoted per campaign.",
-    "paymentNote": "One invoice. 30-day terms. No upfront payment required."
+    "paymentNote": "Ongoing agent accounts — for agents who use the service regularly — are eligible for 30-day invoicing. One-off campaigns are quoted and confirmed before work begins."
   },
   "inkOriginals": {
     "heading": "Ink Originals",
@@ -61,7 +61,7 @@
   "about": {
     "heading": "A complete marketing transformation service.",
     "subheading": "Built for agents who need listings to feel considered without managing three separate vendors.",
-    "body": "The Full Picture brings digital staging, virtual-tour presentation and settlement gifting into one service. The art is original and selected around the property, but the outcome is practical: one brief, one invoice, faster campaign assets, stronger buyer connection and a gift that keeps the agent in the room after settlement.",
+    "body": "The Full Picture brings digital staging, video tour content and settlement gifting into one service. The art is original and selected around the property, but the outcome is practical: a stronger listing presentation, faster campaign assets, clearer differentiation from other agents, stronger buyer connection, no physical staging costs, and a gift that keeps the agent in the room after settlement.",
     "image": "/images/service/st-kilda-dining.png"
   },
   "telegram": {

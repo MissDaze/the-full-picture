@@ -11,12 +11,12 @@ const STEPS = [
   {
     n: '1',
     title: 'Send the listing brief',
-    body: 'Room photos, property description, suburb, buyer profile and campaign timing. No separate staging brief, tour brief and gifting brief required.',
+    body: 'Room photos, property description, suburb, buyer profile and campaign timing. No separate staging brief, video-tour brief and gifting brief required.',
   },
   {
     n: '2',
     title: 'The campaign assets are built',
-    body: 'Collection artwork is selected to suit the property and integrated into the listing imagery. The same direction informs the virtual-tour presentation.',
+    body: 'Collection artwork is selected to suit the property and integrated into the listing imagery. The same direction informs the digital video tour.',
   },
   {
     n: '3',
@@ -37,8 +37,8 @@ export default function HowItWorks() {
 
   return (
     <>
-      <SEOHead title="How It Works" description="One brief. One invoice. Staging, tour and settlement gift handled." />
-      <PageHero title="How It Works" subtitle="One brief. One invoice. A complete listing-to-settlement package." />
+      <SEOHead title="How It Works" description="One brief. Staging, digital video tour and settlement gift handled." />
+      <PageHero title="How It Works" subtitle="One brief. A clear quote. A complete listing-to-settlement package." />
 
       <ScrollFadeIn>
         <section className="bg-[#0a0a0a] py-20 px-6">
@@ -62,7 +62,7 @@ export default function HowItWorks() {
             <div className="max-w-2xl mb-12">
               <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-5">Packages</h2>
               <p className="text-[#888888] text-sm leading-relaxed">
-                Choose the service level for the campaign. Any package can be upgraded into a premium framed handover.
+                Choose the service level for the campaign: digital staging, a digital video tour, print gifting, or a premium framed handover. For agents who use The Full Picture regularly, ongoing accounts are eligible for 30-day invoicing.
               </p>
             </div>
 

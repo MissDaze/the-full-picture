@@ -10,13 +10,13 @@ import testimonials from '../data/testimonials.json'
 const SERVICE_CARDS = [
   {
     label: 'Win listings',
-    title: 'Show vendors a campaign edge.',
-    body: 'Give sellers a reason to choose your listing presentation: property-specific marketing assets, not the same generic staging every other agent can buy.',
+    title: 'Give vendors a clear reason to choose you.',
+    body: 'Walk into the listing presentation with a campaign idea that feels specific to the property: staged visuals, tour direction and a settlement gift already considered.',
   },
   {
     label: 'Market faster',
     title: 'One brief replaces three vendors.',
-    body: 'Digital staging, virtual tour presentation and settlement gift production are handled together. One round of direction. One invoice. 30-day terms.',
+    body: 'Digital staging, a digital video tour and print gifting are handled together, reducing back-and-forth and helping the campaign move faster.',
   },
   {
     label: 'Create connection',
@@ -25,10 +25,22 @@ const SERVICE_CARDS = [
   },
 ]
 
+const AGENT_BENEFITS = [
+  'Stronger listing presentations for vendors',
+  'Campaign images that stand out from generic digital staging',
+  'Faster marketing workflow from one brief',
+  'A digital video tour, not just another set of still images',
+  'No physical staging costs or furniture logistics',
+  'A clearer point of difference for agents and agencies',
+  'Buyer connection through artwork selected for the property',
+  'A settlement gift that stays in the home and keeps your name remembered',
+  '30-day invoicing available for ongoing agent accounts',
+]
+
 const STEPS = [
   ['1', 'Send the listing', 'Room photos, property description, suburb, buyer profile and campaign timing. That is the brief.'],
   ['2', 'Staging assets are built', 'Original collection artwork is selected and digitally integrated into the property imagery for campaign use.'],
-  ['3', 'Tour + print options', 'The staged rooms can become virtual-tour visuals, print selections and framed giclée upgrade options.'],
+  ['3', 'Video tour + print options', 'The staged rooms can become a polished digital video tour, print selections and framed giclée upgrade options.'],
   ['4', 'Settlement handover', 'Approved prints are dispatched ready for the buyer gift. Deluxe packages arrive framed and ready to hang.'],
 ]
 
@@ -89,10 +101,10 @@ export default function Home() {
             <div className="max-w-3xl mb-12">
               <p className="text-[10px] uppercase tracking-[0.25em] text-[#cc0000] mb-4">What you are really buying</p>
               <h2 className="font-playfair text-3xl md:text-5xl text-[#f5f0e8] leading-tight mb-5">
-                A complete real-estate marketing transformation service.
+                A practical advantage for agents from listing pitch to settlement.
               </h2>
               <p className="text-[#888888] text-sm md:text-base leading-relaxed">
-                Not just artwork. Not just staging. Not just a tour. The Full Picture gives agents a way to present the listing, create buyer emotion and deliver a memorable handover without physical staging costs.
+                The Full Picture helps agents win the vendor, market the property, create buyer emotion and deliver a memorable handover — without coordinating physical staging, generic artwork, a separate video tour provider and a separate gift supplier.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -101,6 +113,14 @@ export default function Home() {
                   <p className="text-[10px] uppercase tracking-[0.22em] text-[#cc0000] mb-5">{card.label}</p>
                   <h3 className="font-playfair text-2xl text-[#f5f0e8] mb-4">{card.title}</h3>
                   <p className="text-[#888888] text-sm leading-relaxed">{card.body}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 grid grid-cols-1 gap-3 border border-[#242424] bg-[#0a0a0a] p-6 md:grid-cols-2 lg:grid-cols-4">
+              {AGENT_BENEFITS.map((benefit) => (
+                <div key={benefit} className="flex gap-3 text-sm leading-relaxed text-[#a7a7a7]">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#cc0000]" />
+                  <span>{benefit}</span>
                 </div>
               ))}
             </div>
@@ -117,7 +137,7 @@ export default function Home() {
                 Actual collection artwork, staged into property marketing.
               </h2>
               <p className="text-[#888888] text-sm leading-relaxed mb-6">
-                Your listing images become campaign assets. The same selected artworks can then appear in the tour, the print package and the settlement gift.
+                Your listing images become campaign assets. The same selected artworks can then appear in the digital video tour, the print package and the settlement gift.
               </p>
               <p className="font-playfair italic text-[#f5f0e8] text-xl border-l-2 border-[#cc0000] pl-5">
                 {proc.body}
@@ -154,7 +174,7 @@ export default function Home() {
             <div className="max-w-2xl mb-12">
               <p className="text-[10px] uppercase tracking-[0.25em] text-[#cc0000] mb-4">Packages</p>
               <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-5">Choose the campaign level. Upgrade the handover.</h2>
-              <p className="text-[#888888] text-sm leading-relaxed">Every package is built around one brief and one invoice. The Deluxe upgrade can be added to any package when the campaign calls for a premium framed handover.</p>
+              <p className="text-[#888888] text-sm leading-relaxed">Every package is built around one brief and a clear quoted scope. Ongoing agent accounts are eligible for 30-day invoicing when the service becomes part of their regular campaign workflow.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
               {pricing.tiers.map((tier) => (
