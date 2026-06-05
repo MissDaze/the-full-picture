@@ -341,19 +341,19 @@ export default function Home() {
           <div className="mx-auto max-w-4xl border-l-2 border-[#cc0000] pl-8">
             <p className="mb-4 text-[10px] uppercase tracking-[0.25em] text-[#cc0000]">Why this exists</p>
             <h2 className="mb-6 font-playfair text-3xl text-[#f5f0e8] md:text-4xl">
-              I’m an artist, not an agent — but I know what makes a space worth looking at.
+              Built for listings that deserve a connected visual direction.
             </h2>
             <div className="space-y-4 text-sm leading-relaxed text-[#888888] md:text-base">
               <p>
-                When I was searching for a home, it became obvious how many listings had been digitally staged into the same forgettable version of a room: same furniture, same beige mood, nothing memorable enough to make the place feel worth seeing in person.
+                The Full Picture brings digital staging, campaign video content and settlement gifting into one service, so the listing does not feel like three separate suppliers worked on three disconnected pieces.
               </p>
               <p>
-                I also know what happens when staging, video and gifting are treated as separate jobs. Everyone does their part, but the listing can lose a connected direction. The Full Picture fixes that with one brief, artwork and furniture selected around the property’s own character, and a visual direction that runs from the first still image through to the settlement gift.
-              </p>
-              <p>
-                Not a template. Not beige. Your listing treated as something worth looking at — because it is.
+                The full founder story sits on the About page, but the working idea is simple: one brief, one visual direction, and campaign assets that feel specific to the property.
               </p>
             </div>
+            <Link to="/about" className="mt-6 inline-block text-sm text-[#cc0000] underline underline-offset-4 transition-colors hover:text-[#ff1a1a]">
+              Read the story →
+            </Link>
           </div>
         </section>
       </ScrollFadeIn>
