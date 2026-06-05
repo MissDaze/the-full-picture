@@ -8,8 +8,8 @@
   },
   "hero": {
     "label": "Real Estate Marketing Transformation",
-    "headline": "Win the listing. Elevate the campaign. Leave something behind.",
-    "subtext": "A listing-to-settlement service for real estate agents who want stronger vendor presentations, better campaign assets, video tour content, faster marketing, and a buyer gift that keeps the agent remembered after settlement.",
+    "headline": "Campaign assets and settlement gifting, handled in one brief.",
+    "subtext": "Digital staging, campaign video tour content and settlement artwork gifting for Melbourne real estate agents.",
     "cta": "Start a listing brief",
     "secondaryCta": "See the transformation",
     "images": {
@@ -21,27 +21,45 @@
     "tiers": [
       {
         "name": "Staging Only",
+        "bestFor": "Best for stronger stills and vendor presentation visuals",
         "studio": "$95",
         "standard": "$195",
         "luxury": "From $45/room + $25/feature",
-        "description": "Artwork digitally integrated into your listing images for campaign use."
+        "description": "Artwork digitally integrated into supplied listing images for campaign use.",
+        "includes": [
+          "Artwork direction selected for the property",
+          "Digital staging into supplied listing images",
+          "Campaign-ready staged stills"
+        ]
       },
       {
         "name": "Staging + Tour",
+        "bestFor": "Best for staged visuals plus digital video content",
         "studio": "$295",
         "standard": "$495",
-        "luxury": "POA",
-        "description": "Staged campaign imagery plus a polished digital video tour for campaign use."
+        "luxury": "Quoted to scope before work begins",
+        "description": "Staged campaign imagery plus a polished digital video tour for campaign use.",
+        "includes": [
+          "Everything in Staging Only",
+          "Digital video tour using the staged direction",
+          "Video content ready for campaign use"
+        ]
       },
       {
         "name": "Staging + Tour + Print",
+        "bestFor": "Best for campaign assets plus buyer gifting",
         "studio": "$450",
         "standard": "$695",
-        "luxury": "POA",
-        "description": "Campaign assets plus physical prints dispatched ready for settlement."
+        "luxury": "Quoted to scope before work begins",
+        "description": "Campaign assets plus physical prints dispatched ready for settlement.",
+        "includes": [
+          "Everything in Staging + Tour",
+          "Selected artwork prepared for print",
+          "Physical prints dispatched ready for buyer gifting"
+        ]
       }
     ],
-    "deluxe": "Any package can be upgraded into archival giclée prints, professionally framed and delivered ready to hang. The buyer keeps the full staged collection. Quoted per campaign.",
+    "deluxe": "Any package can be upgraded to archival giclée prints, professionally framed and delivered ready to hang. Quoted per campaign.",
     "paymentNote": "Ongoing agent accounts — for agents who use the service regularly — are eligible for 30-day invoicing. One-off campaigns are quoted and confirmed before work begins."
   },
   "inkOriginals": {
