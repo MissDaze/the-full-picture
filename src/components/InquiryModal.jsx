@@ -79,7 +79,10 @@ export default function InquiryModal({ collectionName, onClose, onSuccess, isSuc
           {isSuccess ? (
             <div className="py-16 text-center">
               <p className="font-playfair text-2xl text-[#f5f0e8]">
-                Thanks — I&apos;ll be in touch.
+                Thanks — I&apos;ve received your enquiry.
+              </p>
+              <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-[#888888]">
+                I&apos;ll review the details and reply as soon as possible.
               </p>
             </div>
           ) : (

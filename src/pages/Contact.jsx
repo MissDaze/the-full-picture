@@ -19,6 +19,11 @@ const INPUT = `w-full bg-[#1a1a1a] border border-[#2a2a2a] text-[#f5f0e8] px-4 p
 const LABEL = 'block text-[10px] uppercase tracking-[0.15em] text-[#666] mb-2'
 const ERR = 'text-[#ff1a1a] text-xs mt-1'
 
+const formatPhone = (phone) => {
+  if (phone === '+61420632044') return '+61 420 632 044'
+  return phone
+}
+
 export default function Contact() {
   const {
     register,
@@ -32,6 +37,7 @@ export default function Contact() {
   const { business, telegram } = siteConfig
   const hasEmail = business.email && !business.email.includes('[TO BE ADDED')
   const hasInstagram = business.instagram && !business.instagram.includes('[TO BE ADDED')
+  const hasPhone = business.phone && !business.phone.includes('[TO BE ADDED')
 
   const onSubmit = async (data) => {
     setSubmitError(false)
@@ -58,7 +64,10 @@ export default function Contact() {
                 {success ? (
                   <div className="py-16">
                     <p className="font-playfair text-2xl text-[#f5f0e8]">
-                      Thanks — I&apos;ll be in touch.
+                      Thanks — I&apos;ve received your enquiry.
+                    </p>
+                    <p className="mt-4 max-w-md text-sm leading-relaxed text-[#888888]">
+                      I&apos;ll review the details and reply as soon as possible.
                     </p>
                   </div>
                 ) : (
@@ -163,8 +172,16 @@ export default function Contact() {
 
               {/* Right column info */}
               <div className="space-y-8 lg:pt-2">
-                {(hasEmail || hasInstagram) && (
+                {(hasEmail || hasInstagram || hasPhone) && (
                   <div>
+                    {hasPhone && (
+                      <a
+                        href={`tel:${business.phone}`}
+                        className="text-[#f5f0e8] text-sm hover:text-[#cc0000] transition-colors block mb-2"
+                      >
+                        {formatPhone(business.phone)}
+                      </a>
+                    )}
                     {hasEmail && (
                       <a
                         href={`mailto:${business.email}`}
@@ -193,7 +210,7 @@ export default function Contact() {
                     together.
                   </p>
                   <p className="text-[#888888] text-sm leading-relaxed">
-                    All packages invoiced on 30-day terms. No upfront payment required.
+                    Ongoing agent accounts are eligible for 30-day invoicing. One-off campaigns are quoted and confirmed before work begins.
                   </p>
                   <p className="text-[#888888] text-sm leading-relaxed">
                     Ink Originals are available by request. Minimum one week notice required.
