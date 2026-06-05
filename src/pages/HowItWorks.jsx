@@ -11,7 +11,7 @@ const STEPS = [
   {
     n: '1',
     title: 'Send the listing brief',
-    body: 'Room photos, property description, suburb, buyer profile and campaign timing. No separate staging brief, video-tour brief and gifting brief required.',
+    body: 'Room photos, property description, suburb, buyer profile and campaign timing. No separate staging brief, video-tour brief and gifting brief required. Quotes are typically returned the same day.',
   },
   {
     n: '2',
@@ -21,7 +21,7 @@ const STEPS = [
   {
     n: '3',
     title: 'Approve the direction',
-    body: 'You approve the staged visuals, select print options, and decide whether the campaign needs the Deluxe framed giclée upgrade.',
+    body: 'You approve the staged visuals, select print options, and decide whether the campaign needs the Deluxe framed giclée upgrade. One revision is included with every package.',
   },
   {
     n: '4',
@@ -62,7 +62,7 @@ export default function HowItWorks() {
             <div className="max-w-2xl mb-12">
               <h2 className="font-playfair text-3xl md:text-4xl text-[#f5f0e8] mb-5">Packages</h2>
               <p className="text-[#888888] text-sm leading-relaxed">
-                Choose the service level for the campaign: digital staging, a digital video tour, print gifting, or a premium framed handover. For agents who use The Full Picture regularly, ongoing accounts are eligible for 30-day invoicing.
+                Choose the service level for the campaign: digital staging, a digital video tour, print gifting, or a premium framed handover. One revision is included with every package. For agents who use The Full Picture regularly, ongoing accounts are eligible for 30-day invoicing.
               </p>
             </div>
 
@@ -84,6 +84,12 @@ export default function HowItWorks() {
               <p className="text-[10px] uppercase tracking-[0.25em] text-[#c9a84c] mb-4">Deluxe upgrade</p>
               <h3 className="font-playfair text-2xl md:text-3xl text-[#f5f0e8] mb-4">Framed giclée collection, ready to hang.</h3>
               <p className="text-[#888888] text-sm leading-relaxed max-w-3xl">{pricing.deluxe}</p>
+            </div>
+
+            <div className="mb-8 grid grid-cols-1 gap-4 border border-[#242424] bg-[#0d0d0d] p-6 text-sm leading-relaxed text-[#9a9a9a] md:grid-cols-3">
+              <p><span className="font-playfair text-[#f5f0e8]">Same-day quote.</span><br />Listing briefs are typically quoted the same day.</p>
+              <p><span className="font-playfair text-[#f5f0e8]">48-hour digital turnaround.</span><br />Confirmed digital work is completed within 48 hours or less.</p>
+              <p><span className="font-playfair text-[#f5f0e8]">Turnaround guarantee.</span><br />If the 48-hour digital deadline is missed, you do not pay for the digital package. Print, framing and production costs are excluded.</p>
             </div>
 
             <p className="text-[#555] text-xs leading-relaxed mb-10">{pricing.paymentNote}</p>
@@ -108,7 +114,7 @@ export default function HowItWorks() {
             </h2>
             <p className="text-[#888888] text-sm leading-relaxed mb-5">{proc.body}</p>
             <p className="text-[#888888] text-sm leading-relaxed">
-              A bottle of wine disappears. A hamper gets eaten. A framed print stays in the home, starts conversations, and keeps the agent attached to the moment long after the campaign is over.
+              Moët gets finished. Crackers get eaten. A framed print stays in the home, starts conversations with future guests, and gives the owner a natural reason to mention the agent again long after the campaign is over.
             </p>
           </div>
         </section>

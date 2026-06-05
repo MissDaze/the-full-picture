@@ -29,25 +29,33 @@ const OFFER_PARTS = [
   {
     label: 'Settlement gift',
     title: 'Carry the campaign idea through to handover.',
-    body: 'Selected artwork can be printed or framed as a buyer gift, creating continuity between the marketing campaign and the settlement moment.',
+    body: 'Selected artwork can be printed or framed as a buyer gift, creating continuity between the campaign and settlement — a lasting reminder rather than another bottle or hamper that disappears.',
   },
 ]
 
+const HERO_BENEFITS = [
+  'One vendor for staging, video and gifting',
+  'Save hours coordinating campaign suppliers',
+  'Stronger vendor presentation assets',
+  'A settlement gift that keeps you remembered',
+]
+
 const AGENT_BENEFITS = [
-  'One brief instead of multiple supplier conversations',
+  'One vendor instead of three separate supplier conversations',
+  'Save hours coordinating staging, video and gifting',
   'Stronger presentation assets for vendor meetings',
   'Campaign visuals that feel more distinctive than generic staging',
   'No physical staging logistics or furniture coordination',
   'A digital video tour ready for campaign use',
-  'Artwork direction that can continue from marketing to handover',
-  'A buyer gift that feels connected to the property',
+  'Artwork direction that continues from marketing to handover',
+  'A buyer gift that can keep the agent in future conversations',
   '30-day invoicing available for ongoing agent accounts',
 ]
 
 const STEPS = [
-  ['1', 'Send the listing brief', 'Send the suburb, room photos, property type, buyer profile if known, and campaign timing.'],
-  ['2', 'Artwork direction is selected', 'The Full Picture selects artwork that suits the property, campaign tone and intended buyer.'],
-  ['3', 'Campaign assets are created', 'The empty room photos are staged digitally, and the approved direction can become a digital video tour.'],
+  ['1', 'Send the listing brief', 'Send the suburb, room photos, property type, buyer profile if known, and campaign timing. Quotes are typically returned the same day.'],
+  ['2', 'Artwork direction is selected', 'The Full Picture selects artwork that suits the property, campaign tone and intended buyer. One revision is included with every package.'],
+  ['3', 'Campaign assets are created', 'The empty room photos are staged digitally, and the approved direction can become a digital video tour. Digital work is completed within 48 hours or less once confirmed.'],
   ['4', 'Print or framed gifting is prepared', 'If included, selected artwork is prepared as prints or framed pieces for settlement handover.'],
 ]
 
@@ -66,7 +74,11 @@ const FAQS = [
   },
   {
     q: 'What is included in each package?',
-    a: 'Staging Only includes digitally staged campaign stills. Staging + Tour adds a digital video tour. Staging + Tour + Print adds physical prints for buyer gifting.',
+    a: 'Staging Only includes digitally staged campaign stills. Staging + Tour adds a digital video tour. Staging + Tour + Print adds physical prints for buyer gifting. One revision is included with all packages.',
+  },
+  {
+    q: 'How quickly can the digital work be completed?',
+    a: 'Quotes are typically returned the same day. Once the scope is confirmed, digital work is completed within 48 hours or less. If that 48-hour digital turnaround is missed, you do not pay for the digital package. Print, framing and production costs are excluded.',
   },
   {
     q: 'Can I use the visuals in my campaign marketing?',
@@ -114,11 +126,11 @@ export default function Home() {
               <Button to="/contact" variant="primary">Start a listing brief</Button>
               <Button to="/how-it-works" variant="outline">See how it works</Button>
             </div>
-            <div className="grid max-w-xl grid-cols-3 gap-5 border-t border-[#222] pt-7">
-              {['Digital staging', 'Video tour', 'Buyer gift'].map((item) => (
-                <div key={item}>
-                  <p className="font-playfair text-lg text-[#f5f0e8]">{item}</p>
-                  <p className="mt-1 text-xs text-[#666]">handled together</p>
+            <div className="grid max-w-2xl grid-cols-1 gap-3 border-t border-[#222] pt-7 sm:grid-cols-2">
+              {HERO_BENEFITS.map((item) => (
+                <div key={item} className="flex gap-3 text-sm leading-relaxed text-[#b6b0a7]">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#cc0000]" />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
@@ -225,7 +237,7 @@ export default function Home() {
             <div className="mb-10 max-w-2xl">
               <p className="mb-4 text-[10px] uppercase tracking-[0.25em] text-[#cc0000]">Why agents use it</p>
               <h2 className="mb-5 font-playfair text-3xl text-[#f5f0e8] md:text-4xl">A sharper campaign without adding more suppliers.</h2>
-              <p className="text-sm leading-relaxed text-[#888888]">Clearer assets, fewer moving parts, and a handover that feels connected to the listing.</p>
+              <p className="text-sm leading-relaxed text-[#888888]">Clearer assets, fewer moving parts, and a handover that keeps your name attached to the property after settlement.</p>
             </div>
             <div className="grid grid-cols-1 gap-3 border border-[#242424] bg-[#111111] p-6 md:grid-cols-2 lg:grid-cols-4">
               {AGENT_BENEFITS.map((benefit) => (
@@ -245,7 +257,7 @@ export default function Home() {
             <div className="mb-12 max-w-2xl">
               <p className="mb-4 text-[10px] uppercase tracking-[0.25em] text-[#cc0000]">Packages</p>
               <h2 className="mb-5 font-playfair text-3xl text-[#f5f0e8] md:text-4xl">Choose the campaign level. Add print or framing when needed.</h2>
-              <p className="text-sm leading-relaxed text-[#888888]">Every campaign is quoted before work begins. Standard pricing is available for common listing types. Luxury, larger or more complex campaigns are priced to scope.</p>
+              <p className="text-sm leading-relaxed text-[#888888]">Every campaign is quoted before work begins, with quotes typically returned the same day. Standard pricing is available for common listing types. Luxury, larger or more complex campaigns are priced to scope. One revision is included with all packages.</p>
             </div>
             <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
               {pricing.tiers.map((tier) => (
@@ -272,6 +284,11 @@ export default function Home() {
               <p className="max-w-3xl text-sm leading-relaxed text-[#888888]">{pricing.deluxe}</p>
             </div>
             <p className="mb-10 text-xs leading-relaxed text-[#666]">{pricing.paymentNote}</p>
+            <div className="mb-10 grid grid-cols-1 gap-4 border border-[#242424] bg-[#0d0d0d] p-6 text-sm leading-relaxed text-[#9a9a9a] md:grid-cols-3">
+              <p><span className="font-playfair text-[#f5f0e8]">Same-day quote.</span><br />Listing briefs are typically quoted the same day.</p>
+              <p><span className="font-playfair text-[#f5f0e8]">48-hour digital turnaround.</span><br />Confirmed digital work is completed within 48 hours or less.</p>
+              <p><span className="font-playfair text-[#f5f0e8]">Turnaround guarantee.</span><br />If the 48-hour digital deadline is missed, you do not pay for the digital package. Print, framing and production costs are excluded.</p>
+            </div>
             <Button to="/contact" variant="primary">Start a listing brief</Button>
           </div>
         </section>
@@ -293,7 +310,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <p className="mt-10 max-w-xl text-sm leading-relaxed text-[#777]">After you submit a brief, you’ll receive a package recommendation and quote before work begins.</p>
+            <p className="mt-10 max-w-xl text-sm leading-relaxed text-[#777]">After you submit a brief, you’ll receive a package recommendation and quote before work begins — typically the same day.</p>
           </div>
         </section>
       </ScrollFadeIn>
@@ -322,16 +339,16 @@ export default function Home() {
       <ScrollFadeIn>
         <section className="bg-[#0a0a0a] px-6 py-20">
           <div className="mx-auto max-w-4xl border-l-2 border-[#cc0000] pl-8">
-            <p className="mb-4 text-[10px] uppercase tracking-[0.25em] text-[#cc0000]">Direct service</p>
+            <p className="mb-4 text-[10px] uppercase tracking-[0.25em] text-[#cc0000]">Why this exists</p>
             <h2 className="mb-6 font-playfair text-3xl text-[#f5f0e8] md:text-4xl">
               Built for agents who want the campaign and handover to feel connected.
             </h2>
             <div className="space-y-4 text-sm leading-relaxed text-[#888888] md:text-base">
               <p>
-                The Full Picture is a founder-led service based in Melbourne. Each campaign is handled directly, with artwork selected around the property and the practical needs of the agent: presentation, marketing, video content and settlement gifting.
+                The Full Picture is a founder-led service based in Melbourne, created because most listing campaigns treat presentation, video content and settlement gifting as separate jobs. Agents end up managing more suppliers, more briefs and more back-and-forth than the campaign should need.
               </p>
               <p>
-                It is designed to keep the process efficient while giving the listing a more distinctive visual identity than generic staging or standard buyer gifts.
+                This brings those pieces into one direct service: artwork selected around the property, digital assets for the campaign, and a gift that can stay in the home. When guests later ask about the artwork, the owner has a reason to say the agent’s name again — long after the Moët or crackers would be gone.
               </p>
             </div>
           </div>
@@ -363,10 +380,10 @@ export default function Home() {
             <p className="mb-4 text-[10px] uppercase tracking-[0.25em] text-[#cc0000]">Start here</p>
             <h2 className="mb-5 font-playfair text-3xl text-[#f5f0e8] md:text-4xl">Have a listing coming up?</h2>
             <p className="mb-8 text-sm leading-relaxed text-[#888888]">
-              Send through the suburb, room photos, property type and campaign timing. I’ll recommend the best package and artwork direction for the listing.
+              Send through the suburb, room photos, property type and campaign timing. I’ll recommend the best package and artwork direction for the listing, usually with a same-day quote.
             </p>
             <Button to="/contact" variant="primary">Start a listing brief</Button>
-            <p className="mt-5 text-xs text-[#666]">No obligation. You’ll receive a recommendation and quote before work begins.</p>
+            <p className="mt-5 text-xs text-[#666]">No obligation. One revision is included with every package.</p>
           </div>
         </section>
       </ScrollFadeIn>

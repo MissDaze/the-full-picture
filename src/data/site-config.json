@@ -29,7 +29,8 @@
         "includes": [
           "Artwork direction selected for the property",
           "Digital staging into supplied listing images",
-          "Campaign-ready staged stills"
+          "Campaign-ready staged stills",
+          "One included revision"
         ]
       },
       {
@@ -42,7 +43,8 @@
         "includes": [
           "Everything in Staging Only",
           "Digital video tour using the staged direction",
-          "Video content ready for campaign use"
+          "Video content ready for campaign use",
+          "One included revision"
         ]
       },
       {
@@ -55,12 +57,13 @@
         "includes": [
           "Everything in Staging + Tour",
           "Selected artwork prepared for print",
-          "Physical prints dispatched ready for buyer gifting"
+          "Physical prints dispatched ready for buyer gifting",
+          "One included revision"
         ]
       }
     ],
     "deluxe": "Any package can be upgraded to archival giclée prints, professionally framed and delivered ready to hang. Quoted per campaign.",
-    "paymentNote": "Ongoing agent accounts — for agents who use the service regularly — are eligible for 30-day invoicing. One-off campaigns are quoted and confirmed before work begins."
+    "paymentNote": "One revision is included with every package. Ongoing agent accounts — for agents who use the service regularly — are eligible for 30-day invoicing. One-off campaigns are quoted and confirmed before work begins."
   },
   "inkOriginals": {
     "heading": "Ink Originals",
@@ -74,7 +77,7 @@
   },
   "process": {
     "heading": "From campaign asset to buyer gift.",
-    "body": "The artwork used in the listing campaign is the artwork the buyer can receive at settlement. They see it in the marketing, imagine it in the home, then keep it as part of the handover."
+    "body": "The artwork used in the listing campaign is the artwork the buyer can receive at settlement. They see it in the marketing, imagine it in the home, then keep it as part of the handover — a gift that can prompt future conversations where the agent is remembered."
   },
   "about": {
     "heading": "A complete marketing transformation service.",
