@@ -123,7 +123,7 @@ export default function Home() {
               The Full Picture helps Melbourne real estate agents present listings better, create distinctive campaign content, and deliver a more memorable buyer handover — without coordinating separate staging, video and gift suppliers.
             </p>
             <div className="mb-10 flex flex-col gap-4 sm:flex-row">
-              <Button to="/contact" variant="primary">Start a listing brief</Button>
+              <Button to="/contact" variant="primary">Get a quote</Button>
               <Button to="/how-it-works" variant="outline">See how it works</Button>
             </div>
             <div className="grid max-w-2xl grid-cols-1 gap-3 border-t border-[#222] pt-7 sm:grid-cols-2">
@@ -289,7 +289,7 @@ export default function Home() {
               <p><span className="font-playfair text-[#f5f0e8]">48-hour digital turnaround.</span><br />Confirmed digital work is completed within 48 hours or less.</p>
               <p><span className="font-playfair text-[#f5f0e8]">Turnaround guarantee.</span><br />If the 48-hour digital deadline is missed, you do not pay for the digital package. Print, framing and production costs are excluded.</p>
             </div>
-            <Button to="/contact" variant="primary">Start a listing brief</Button>
+            <Button to="/contact" variant="primary">Get a quote</Button>
           </div>
         </section>
       </ScrollFadeIn>
@@ -385,7 +385,7 @@ export default function Home() {
             <p className="mb-8 text-sm leading-relaxed text-[#888888]">
               Send through the suburb, room photos, property type and campaign timing. I’ll recommend the best package and artwork direction for the listing, usually with a same-day quote.
             </p>
-            <Button to="/contact" variant="primary">Start a listing brief</Button>
+            <Button to="/contact" variant="primary">Get a quote</Button>
             <p className="mt-5 text-xs text-[#666]">No obligation. One revision is included with every package.</p>
           </div>
         </section>
