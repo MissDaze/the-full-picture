@@ -341,14 +341,17 @@ export default function Home() {
           <div className="mx-auto max-w-4xl border-l-2 border-[#cc0000] pl-8">
             <p className="mb-4 text-[10px] uppercase tracking-[0.25em] text-[#cc0000]">Why this exists</p>
             <h2 className="mb-6 font-playfair text-3xl text-[#f5f0e8] md:text-4xl">
-              Built for agents who want the campaign and handover to feel connected.
+              I’m an artist, not an agent — but I know what makes a space worth looking at.
             </h2>
             <div className="space-y-4 text-sm leading-relaxed text-[#888888] md:text-base">
               <p>
-                The Full Picture is a founder-led service based in Melbourne, created because most listing campaigns treat presentation, video content and settlement gifting as separate jobs. Agents end up managing more suppliers, more briefs and more back-and-forth than the campaign should need.
+                When I was searching for a home, it became obvious how many listings had been digitally staged into the same forgettable version of a room: same furniture, same beige mood, nothing memorable enough to make the place feel worth seeing in person.
               </p>
               <p>
-                This brings those pieces into one direct service: artwork selected around the property, digital assets for the campaign, and a gift that can stay in the home. When guests later ask about the artwork, the owner has a reason to say the agent’s name again — long after the Moët or crackers would be gone.
+                I also know what happens when staging, video and gifting are treated as separate jobs. Everyone does their part, but the listing can lose a connected direction. The Full Picture fixes that with one brief, artwork and furniture selected around the property’s own character, and a visual direction that runs from the first still image through to the settlement gift.
+              </p>
+              <p>
+                Not a template. Not beige. Your listing treated as something worth looking at — because it is.
               </p>
             </div>
           </div>

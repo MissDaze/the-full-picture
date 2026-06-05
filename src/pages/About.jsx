@@ -26,7 +26,11 @@ export default function About() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
               <div>
                 {hasAboutBody ? (
-                  <p className="text-[#888888] text-sm leading-relaxed">{about.body}</p>
+                  <div className="space-y-5 text-[#888888] text-sm leading-relaxed">
+                    {about.body.split('\n\n').map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
                 ) : (
                   <p className="text-[#555] text-sm italic">
                     About copy coming soon.
