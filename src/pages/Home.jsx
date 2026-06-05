@@ -37,6 +37,15 @@ const AGENT_BENEFITS = [
   '30-day invoicing available for ongoing agent accounts',
 ]
 
+const BEFORE_AFTER = {
+  before: [
+    '/images/service/before-after/before-empty-01.jpg',
+    '/images/service/before-after/before-empty-02.jpg',
+  ],
+  video: '/images/service/before-after/after-video-tour.mp4',
+  poster: '/images/service/before-after/after-video-poster.jpg',
+}
+
 const STEPS = [
   ['1', 'Send the listing', 'Room photos, property description, suburb, buyer profile and campaign timing. That is the brief.'],
   ['2', 'Staging assets are built', 'Original collection artwork is selected and digitally integrated into the property imagery for campaign use.'],
@@ -94,6 +103,67 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ScrollFadeIn>
+        <section className="bg-[#0a0a0a] px-6 py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-12 grid grid-cols-1 gap-8 border-b border-[#242424] pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+              <div>
+                <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-[#cc0000]">Before → after proof</p>
+                <h2 className="font-playfair text-3xl leading-tight text-[#f5f0e8] md:text-5xl">
+                  Empty listing photos become a campaign video agents can actually use.
+                </h2>
+              </div>
+              <p className="max-w-2xl text-sm leading-relaxed text-[#9a9a9a] lg:justify-self-end">
+                Send the empty room photos. The Full Picture turns them into staged campaign content: a polished digital video tour, still campaign assets, and artwork selections that can continue into the buyer gift.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
+              <div className="flex flex-col gap-5">
+                <div className="border border-[#242424] bg-[#101010] p-5">
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-[#777]">Before</p>
+                    <p className="text-xs text-[#666]">Empty listing stills supplied by the agent</p>
+                  </div>
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                    {BEFORE_AFTER.before.map((src, index) => (
+                      <div key={src} className="overflow-hidden bg-[#050505]">
+                        <img
+                          src={src}
+                          alt={`Empty listing before image ${index + 1}`}
+                          className="block aspect-[4/3] w-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative border border-[#cc0000]/60 bg-[#111111] p-4 shadow-[0_0_35px_rgba(204,0,0,0.16)] md:p-5">
+                <div className="absolute left-6 top-6 z-10 bg-[#cc0000] px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#f5f0e8]">
+                  After: digital video tour
+                </div>
+                <video
+                  src={BEFORE_AFTER.video}
+                  poster={BEFORE_AFTER.poster}
+                  className="block max-h-[760px] w-full bg-[#050505] object-contain"
+                  controls
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+                <div className="grid grid-cols-1 gap-4 border-t border-[#242424] pt-5 text-sm text-[#9a9a9a] md:grid-cols-3">
+                  <p><span className="font-playfair text-[#f5f0e8]">1.</span> Empty room photos become styled visual content.</p>
+                  <p><span className="font-playfair text-[#f5f0e8]">2.</span> The finished deliverable includes a video tour, not just still images.</p>
+                  <p><span className="font-playfair text-[#f5f0e8]">3.</span> The same artwork direction can become the settlement gift.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollFadeIn>
 
       <ScrollFadeIn>
         <section className="bg-[#111111] py-20 px-6">
